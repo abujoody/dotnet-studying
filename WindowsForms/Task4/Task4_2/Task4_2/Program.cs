@@ -7,6 +7,8 @@ namespace Task4_2
 {
     static class Program
     {
+	//Test changes to check diff tool work
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
