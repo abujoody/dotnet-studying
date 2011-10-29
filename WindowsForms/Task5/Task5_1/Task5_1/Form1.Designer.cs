@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.AuthorsListBox = new System.Windows.Forms.ListBox();
+            this.authorsListBox = new System.Windows.Forms.ListBox();
             this.authorsLabel = new System.Windows.Forms.Label();
             this.booksLabel = new System.Windows.Forms.Label();
-            this.BooksListBox = new System.Windows.Forms.ListBox();
-            this.ArrowRightPictureBox = new System.Windows.Forms.PictureBox();
+            this.booksListBox = new System.Windows.Forms.ListBox();
+            this.arrowRightPictureBox = new System.Windows.Forms.PictureBox();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.filterLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ArrowRightPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowRightPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // AuthorsListBox
+            // authorsListBox
             // 
-            this.AuthorsListBox.FormattingEnabled = true;
-            this.AuthorsListBox.Location = new System.Drawing.Point(12, 25);
-            this.AuthorsListBox.Name = "AuthorsListBox";
-            this.AuthorsListBox.Size = new System.Drawing.Size(166, 277);
-            this.AuthorsListBox.TabIndex = 0;
+            this.authorsListBox.FormattingEnabled = true;
+            this.authorsListBox.Location = new System.Drawing.Point(12, 25);
+            this.authorsListBox.Name = "authorsListBox";
+            this.authorsListBox.Size = new System.Drawing.Size(166, 277);
+            this.authorsListBox.TabIndex = 0;
+            this.authorsListBox.SelectedIndexChanged += new System.EventHandler(this.authorsListBox_SelectedIndexChanged);
             // 
             // authorsLabel
             // 
@@ -65,24 +66,24 @@
             this.booksLabel.TabIndex = 2;
             this.booksLabel.Text = "Books:";
             // 
-            // BooksListBox
+            // booksListBox
             // 
-            this.BooksListBox.FormattingEnabled = true;
-            this.BooksListBox.Location = new System.Drawing.Point(306, 25);
-            this.BooksListBox.Name = "BooksListBox";
-            this.BooksListBox.Size = new System.Drawing.Size(166, 277);
-            this.BooksListBox.TabIndex = 3;
+            this.booksListBox.FormattingEnabled = true;
+            this.booksListBox.Location = new System.Drawing.Point(306, 25);
+            this.booksListBox.Name = "booksListBox";
+            this.booksListBox.Size = new System.Drawing.Size(166, 277);
+            this.booksListBox.TabIndex = 3;
             // 
-            // ArrowRightPictureBox
+            // arrowRightPictureBox
             // 
-            this.ArrowRightPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ArrowRightPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ArrowRightPictureBox.Image")));
-            this.ArrowRightPictureBox.Location = new System.Drawing.Point(184, 143);
-            this.ArrowRightPictureBox.Name = "ArrowRightPictureBox";
-            this.ArrowRightPictureBox.Size = new System.Drawing.Size(116, 69);
-            this.ArrowRightPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ArrowRightPictureBox.TabIndex = 4;
-            this.ArrowRightPictureBox.TabStop = false;
+            this.arrowRightPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.arrowRightPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("arrowRightPictureBox.Image")));
+            this.arrowRightPictureBox.Location = new System.Drawing.Point(184, 143);
+            this.arrowRightPictureBox.Name = "arrowRightPictureBox";
+            this.arrowRightPictureBox.Size = new System.Drawing.Size(116, 69);
+            this.arrowRightPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.arrowRightPictureBox.TabIndex = 4;
+            this.arrowRightPictureBox.TabStop = false;
             // 
             // filterComboBox
             // 
@@ -95,6 +96,7 @@
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(116, 21);
             this.filterComboBox.TabIndex = 5;
+            this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterComboBox_SelectedIndexChanged);
             // 
             // filterLabel
             // 
@@ -112,15 +114,16 @@
             this.ClientSize = new System.Drawing.Size(486, 315);
             this.Controls.Add(this.filterLabel);
             this.Controls.Add(this.filterComboBox);
-            this.Controls.Add(this.ArrowRightPictureBox);
-            this.Controls.Add(this.BooksListBox);
+            this.Controls.Add(this.arrowRightPictureBox);
+            this.Controls.Add(this.booksListBox);
             this.Controls.Add(this.booksLabel);
             this.Controls.Add(this.authorsLabel);
-            this.Controls.Add(this.AuthorsListBox);
+            this.Controls.Add(this.authorsListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Very Simple Library";
-            ((System.ComponentModel.ISupportInitialize)(this.ArrowRightPictureBox)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.arrowRightPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,11 +131,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox AuthorsListBox;
+        private System.Windows.Forms.ListBox authorsListBox;
         private System.Windows.Forms.Label authorsLabel;
         private System.Windows.Forms.Label booksLabel;
-        private System.Windows.Forms.ListBox BooksListBox;
-        private System.Windows.Forms.PictureBox ArrowRightPictureBox;
+        private System.Windows.Forms.ListBox booksListBox;
+        private System.Windows.Forms.PictureBox arrowRightPictureBox;
         private System.Windows.Forms.ComboBox filterComboBox;
         private System.Windows.Forms.Label filterLabel;
     }
