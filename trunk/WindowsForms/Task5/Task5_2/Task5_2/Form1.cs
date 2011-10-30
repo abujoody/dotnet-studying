@@ -124,10 +124,12 @@ namespace Task5_2
                 string fileContent = fsr.ReadToEnd();
                 fsr.Close();
 
+                StringComparison comparisonType = caseInsensitiveCheckBox.Checked ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
+
                 int index = 0;
                 while (true)
                 {
-                    index = fileContent.IndexOf(str, index);
+                    index = fileContent.IndexOf(str, index, comparisonType);
                     if (index == -1)
                         break;
 
