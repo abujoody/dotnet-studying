@@ -13,6 +13,8 @@ namespace Task5_2
     public partial class MainForm : Form
     {
         const char delimeter = '|';
+        string previousString = "";
+        StringComparison currentComparisonType = StringComparison.CurrentCulture;
 
         #region StringSearchResult type
         struct StringSearchResult
@@ -85,15 +87,19 @@ namespace Task5_2
         private void findStringButton_Click(object sender, EventArgs e)
         {
             string stringToSearch = stringToSearchTextBox.Text;
-            if (stringToSearch != "")
+            StringComparison newComparisonType = caseInsensitiveCheckBox.Checked ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
+            if (stringToSearch != "" && (stringToSearch != previousString || currentComparisonType != newComparisonType))
             {
+                previousString = stringToSearch;
+                currentComparisonType = newComparisonType;
+
                 resultsListBox.BeginUpdate();
 
                 resultsListBox.Items.Clear();
                 StringSearchResult result = new StringSearchResult();
                 foreach (Object filePath in filesToSearchListBox.Items)
                 {
-                    result = searchInFile((string)filePath, stringToSearch);
+                    result = searchInFile((string)filePath, stringToSearch, currentComparisonType);
                     if (result.indexes.Count == 0)
                         continue;
 
@@ -114,7 +120,7 @@ namespace Task5_2
         #endregion
 
         #region Help private methods
-        private StringSearchResult searchInFile(string path, string str)
+        private StringSearchResult searchInFile(string path, string str, StringComparison comparisonType)
         {
             StringSearchResult result = new StringSearchResult();
             result.path = path;
@@ -125,8 +131,6 @@ namespace Task5_2
                 StreamReader fsr = new StreamReader(path);
                 string fileContent = fsr.ReadToEnd();
                 fsr.Close();
-
-                StringComparison comparisonType = caseInsensitiveCheckBox.Checked ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
 
                 int index = 0;
                 while (true)
