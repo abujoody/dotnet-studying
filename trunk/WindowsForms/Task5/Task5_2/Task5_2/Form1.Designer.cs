@@ -50,6 +50,7 @@
             this.findStringButton.TabIndex = 0;
             this.findStringButton.Text = "Find String";
             this.findStringButton.UseVisualStyleBackColor = true;
+            this.findStringButton.Click += new System.EventHandler(this.findStringButton_Click);
             // 
             // fileNamePreviewTextBox
             // 
@@ -109,6 +110,7 @@
             // resultsListBox
             // 
             this.resultsListBox.FormattingEnabled = true;
+            this.resultsListBox.HorizontalScrollbar = true;
             this.resultsListBox.Location = new System.Drawing.Point(12, 316);
             this.resultsListBox.Name = "resultsListBox";
             this.resultsListBox.Size = new System.Drawing.Size(532, 160);
@@ -127,6 +129,7 @@
             // filesToSearchListBox
             // 
             this.filesToSearchListBox.FormattingEnabled = true;
+            this.filesToSearchListBox.HorizontalScrollbar = true;
             this.filesToSearchListBox.Location = new System.Drawing.Point(12, 77);
             this.filesToSearchListBox.Name = "filesToSearchListBox";
             this.filesToSearchListBox.Size = new System.Drawing.Size(532, 160);
@@ -161,6 +164,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Find Word Position";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
