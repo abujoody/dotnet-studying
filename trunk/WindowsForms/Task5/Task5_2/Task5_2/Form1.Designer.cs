@@ -79,6 +79,7 @@
             this.openFileDialogButton.TabIndex = 3;
             this.openFileDialogButton.Text = "...";
             this.openFileDialogButton.UseVisualStyleBackColor = true;
+            this.openFileDialogButton.Click += new System.EventHandler(this.openFileDialogButton_Click);
             // 
             // stringToSearchLabel
             // 
@@ -121,6 +122,7 @@
             this.addFileToListButton.TabIndex = 8;
             this.addFileToListButton.Text = "Add To List";
             this.addFileToListButton.UseVisualStyleBackColor = true;
+            this.addFileToListButton.Click += new System.EventHandler(this.addFileToListButton_Click);
             // 
             // filesToSearchListBox
             // 
@@ -129,15 +131,16 @@
             this.filesToSearchListBox.Name = "filesToSearchListBox";
             this.filesToSearchListBox.Size = new System.Drawing.Size(532, 160);
             this.filesToSearchListBox.TabIndex = 9;
+            this.filesToSearchListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.filesToSearchListBox_MouseDoubleClick);
             // 
             // deleteFileInfoLabel
             // 
             this.deleteFileInfoLabel.AutoSize = true;
             this.deleteFileInfoLabel.Location = new System.Drawing.Point(134, 55);
             this.deleteFileInfoLabel.Name = "deleteFileInfoLabel";
-            this.deleteFileInfoLabel.Size = new System.Drawing.Size(331, 13);
+            this.deleteFileInfoLabel.Size = new System.Drawing.Size(365, 13);
             this.deleteFileInfoLabel.TabIndex = 10;
-            this.deleteFileInfoLabel.Text = "To delete file from list perform double click on item you want to delete";
+            this.deleteFileInfoLabel.Text = "To delete file from list perform mouse double click on item you want to delete";
             // 
             // MainForm
             // 
