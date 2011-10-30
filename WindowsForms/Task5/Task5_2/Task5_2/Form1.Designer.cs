@@ -40,13 +40,14 @@
             this.addFileToListButton = new System.Windows.Forms.Button();
             this.filesToSearchListBox = new System.Windows.Forms.ListBox();
             this.deleteFileInfoLabel = new System.Windows.Forms.Label();
+            this.caseInsensitiveCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // findStringButton
             // 
-            this.findStringButton.Location = new System.Drawing.Point(273, 268);
+            this.findStringButton.Location = new System.Drawing.Point(435, 269);
             this.findStringButton.Name = "findStringButton";
-            this.findStringButton.Size = new System.Drawing.Size(109, 20);
+            this.findStringButton.Size = new System.Drawing.Size(109, 21);
             this.findStringButton.TabIndex = 0;
             this.findStringButton.Text = "Find String";
             this.findStringButton.UseVisualStyleBackColor = true;
@@ -96,7 +97,7 @@
             // 
             this.stringToSearchTextBox.Location = new System.Drawing.Point(12, 269);
             this.stringToSearchTextBox.Name = "stringToSearchTextBox";
-            this.stringToSearchTextBox.Size = new System.Drawing.Size(255, 20);
+            this.stringToSearchTextBox.Size = new System.Drawing.Size(308, 20);
             this.stringToSearchTextBox.TabIndex = 5;
             // 
             // resultsLabel
@@ -146,11 +147,22 @@
             this.deleteFileInfoLabel.TabIndex = 10;
             this.deleteFileInfoLabel.Text = "To delete file from list perform mouse double click on item you want to delete";
             // 
+            // caseInsensitiveCheckBox
+            // 
+            this.caseInsensitiveCheckBox.AutoSize = true;
+            this.caseInsensitiveCheckBox.Location = new System.Drawing.Point(326, 271);
+            this.caseInsensitiveCheckBox.Name = "caseInsensitiveCheckBox";
+            this.caseInsensitiveCheckBox.Size = new System.Drawing.Size(103, 17);
+            this.caseInsensitiveCheckBox.TabIndex = 11;
+            this.caseInsensitiveCheckBox.Text = "Case Insensitive";
+            this.caseInsensitiveCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 488);
+            this.Controls.Add(this.caseInsensitiveCheckBox);
             this.Controls.Add(this.deleteFileInfoLabel);
             this.Controls.Add(this.filesToSearchListBox);
             this.Controls.Add(this.addFileToListButton);
@@ -185,6 +197,7 @@
         private System.Windows.Forms.Button addFileToListButton;
         private System.Windows.Forms.ListBox filesToSearchListBox;
         private System.Windows.Forms.Label deleteFileInfoLabel;
+        private System.Windows.Forms.CheckBox caseInsensitiveCheckBox;
     }
 }
 
