@@ -50,6 +50,8 @@ namespace Task5_2
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
+                changeInitialDirectory();
+
                 StringBuilder fileNames = new StringBuilder();
                 foreach (string fileName in openFileDialog.FileNames)
                 {
@@ -144,6 +146,10 @@ namespace Task5_2
             }
 
             return result;
+        }
+        private void changeInitialDirectory()
+        {
+            openFileDialog.InitialDirectory = openFileDialog.FileName.Remove(openFileDialog.FileName.LastIndexOf('\\'));
         }
         #endregion
     }
