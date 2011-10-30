@@ -27,36 +27,48 @@ namespace Task5_1
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            loadLibrary();
+            if (!loadLibrary())
+                this.Close();
+
             showAuthors();
             showBooks(allBooksFilter);
 
             filterComboBox.SelectedItem = allBooksFilter;
         }
 
-        private void loadLibrary()
+        private bool loadLibrary()
         {
-            StreamReader fsr = new StreamReader("Library.txt");
-
-            string tmp = null;
-            string[] entities = new string[2];
-
-            while (!fsr.EndOfStream)
+            try
             {
-                tmp = fsr.ReadLine();
-                entities = tmp.Split(',');
+                StreamReader fsr = new StreamReader("Library.txt");
 
-                entities[0] = entities[0].Trim(); //Author
-                entities[1] = entities[1].Trim(); //Book
+                string tmp = null;
+                string[] entities = new string[2];
 
-                if (!library.ContainsKey(entities[0]))
+                while (!fsr.EndOfStream)
                 {
-                    library[entities[0]] = new List<string>();
-                }
-                library[entities[0]].Add(entities[1]);
-            }
+                    tmp = fsr.ReadLine();
+                    entities = tmp.Split(',');
 
-            fsr.Close();
+                    entities[0] = entities[0].Trim(); //Author
+                    entities[1] = entities[1].Trim(); //Book
+
+                    if (!library.ContainsKey(entities[0]))
+                    {
+                        library[entities[0]] = new List<string>();
+                    }
+                    library[entities[0]].Add(entities[1]);
+                }
+
+                fsr.Close();
+
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("Error during loading \"Library.txt\".\nCheck if this file exists.\n\nApplication will be closed.", "Error");
+                return false;
+            }
         }
 
         private void showAuthors()
