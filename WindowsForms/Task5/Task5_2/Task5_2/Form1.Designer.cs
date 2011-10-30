@@ -71,6 +71,7 @@
             // openFileDialog
             // 
             this.openFileDialog.FileName = "FileName";
+            this.openFileDialog.Multiselect = true;
             // 
             // openFileDialogButton
             // 
