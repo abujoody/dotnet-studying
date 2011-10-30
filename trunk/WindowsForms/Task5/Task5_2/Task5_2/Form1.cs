@@ -12,6 +12,8 @@ namespace Task5_2
 {
     public partial class MainForm : Form
     {
+        const char delimeter = '|';
+
         #region StringSearchResult type
         struct StringSearchResult
         {
@@ -48,15 +50,28 @@ namespace Task5_2
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                fileNamePreviewTextBox.Text = openFileDialog.FileName;
+                StringBuilder fileNames = new StringBuilder();
+                foreach (string fileName in openFileDialog.FileNames)
+                {
+                    fileNames.AppendFormat("{0}{1}", fileName, delimeter);
+                }
+
+                fileNamePreviewTextBox.Text = fileNames.ToString().TrimEnd(delimeter);
             }
         }
 
         private void addFileToListButton_Click(object sender, EventArgs e)
         {
-            if (fileNamePreviewTextBox.Text != "" && !filesToSearchListBox.Items.Contains(fileNamePreviewTextBox.Text))
+            if (fileNamePreviewTextBox.Text == "")
+                return;
+            
+            string[] fileNames = fileNamePreviewTextBox.Text.Split(delimeter);
+            foreach (string fileName in fileNames)
             {
-                filesToSearchListBox.Items.Add(fileNamePreviewTextBox.Text);
+                if (!filesToSearchListBox.Items.Contains(fileName))
+                {
+                    filesToSearchListBox.Items.Add(fileName);
+                }
             }
         }
 
