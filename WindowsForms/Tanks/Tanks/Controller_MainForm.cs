@@ -38,8 +38,19 @@ namespace Tanks
 
         private void button1_Click(object sender, EventArgs e)
         {
-            modelPlay = new Thread(model.Play);
-            modelPlay.Start();
+            if (model.gameStatus == GameStatus.playing)
+            {
+                modelPlay.Abort();
+                model.gameStatus = GameStatus.stopping;
+            }
+            else
+            {
+                modelPlay = new Thread(model.Play);
+                modelPlay.Start();
+                model.gameStatus = GameStatus.playing;
+
+                view.Invalidate();
+            }
         }
     }
 }
