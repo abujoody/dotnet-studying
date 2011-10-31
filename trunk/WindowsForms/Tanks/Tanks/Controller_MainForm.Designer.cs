@@ -29,23 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Controller_MainForm));
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // MainForm
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(178, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 21);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Play / Stop";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Controller_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "Controller_MainForm";
             this.Text = "Танки";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
 
