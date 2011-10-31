@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace Tanks
 {
-    public partial class MainForm : Form
+    public partial class Controller_MainForm : Form
     {
-        public MainForm()
+        View view;
+
+        public Controller_MainForm()
         {
             InitializeComponent();
+
+            view = new View();
+            this.Controls.Add(view);
         }
     }
 }
