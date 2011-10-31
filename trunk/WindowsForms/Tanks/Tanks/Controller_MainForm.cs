@@ -32,7 +32,7 @@ namespace Tanks
 
             model = new Model(sizeField, amountTanks, amountApples, speedGame);
 
-            view = new View();
+            view = new View(model);
             this.Controls.Add(view);
         }
 

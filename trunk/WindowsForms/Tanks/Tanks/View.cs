@@ -9,11 +9,21 @@ using System.Windows.Forms;
 
 namespace Tanks
 {
-    public partial class View : UserControl
+    partial class View : UserControl
     {
-        public View()
+        Model model;
+
+        public View(Model model)
         {
             InitializeComponent();
+
+            this.model = model;
+        }
+
+        private void View_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gr = e.Graphics;
+            gr.DrawImage(model.tank.img, new Point(model.tank.x, model.tank.y));
         }
     }
 }
