@@ -12,7 +12,7 @@ namespace Tanks
         int amountApples;
         int speedGame;
 
-        Tank tank;
+        public Tank tank;
 
         public Model(int sizeField, int amountTanks, int amountApples, int speedGame)
         {
