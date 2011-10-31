@@ -24,6 +24,7 @@ namespace Tanks
         {
             Graphics gr = e.Graphics;
             gr.DrawImage(model.tank.img, new Point(model.tank.x, model.tank.y));
+            Invalidate();
         }
     }
 }

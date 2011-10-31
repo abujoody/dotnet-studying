@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Tanks
 {
@@ -28,6 +29,7 @@ namespace Tanks
         {
             while (true)
             {
+                Thread.Sleep(speedGame);
                 tank.Run();
             }
         }
