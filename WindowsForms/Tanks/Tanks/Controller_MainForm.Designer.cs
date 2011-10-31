@@ -53,6 +53,7 @@
             this.MaximizeBox = false;
             this.Name = "Controller_MainForm";
             this.Text = "Танки";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Controller_MainForm_FormClosing);
             this.ResumeLayout(false);
 
         }

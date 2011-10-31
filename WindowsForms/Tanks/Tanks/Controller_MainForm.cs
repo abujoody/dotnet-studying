@@ -52,5 +52,20 @@ namespace Tanks
                 view.Invalidate();
             }
         }
+
+        private void Controller_MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (modelPlay != null)
+            {
+                model.gameStatus = GameStatus.stopping;
+                modelPlay.Abort();
+            }
+
+            DialogResult dr = MessageBox.Show("Are you sure you want close application?", this.Text, MessageBoxButtons.YesNoCancel);
+            if (dr == DialogResult.Yes)
+                e.Cancel = false;
+            else
+                e.Cancel = true;
+        }
     }
 }
