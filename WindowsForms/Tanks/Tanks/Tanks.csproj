@@ -55,6 +55,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tank.cs" />
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MainIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,6 +17,7 @@ namespace Tanks
         const int defSpeedGame = 40;
 
         View view;
+        Model model;
 
         public Controller_MainForm() : this(defSizeField) {}
         public Controller_MainForm(int sizeField) : this(sizeField, defAmountTanks) {}
@@ -25,6 +26,8 @@ namespace Tanks
         public Controller_MainForm(int sizeField, int amountTanks, int amountApples, int speedGame)
         {
             InitializeComponent();
+
+            model = new Model(sizeField, amountTanks, amountApples, speedGame);
 
             view = new View();
             this.Controls.Add(view);
