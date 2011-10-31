@@ -1,0 +1,7 @@
+If you download this project, don't laugh from its implementation.
+I just followed some tutorial of some author. This person has great
+theoretical skills but in my opinion this project is ugly implemented.
+In future i'll try to refactor it (especially in redrawing mechanism
+part) if author didn't propose another way (Im only on 12 from 55
+lesson now). And this is only my opinion about this project (what if
+you like it ?... :) ).
