@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace Task5_2
 {
     public partial class MainForm : Form
     {
+        delegate void AddSearchResultsDelegate(object result);
+
         const char delimeter = '|';
         string previousString = "";
+        const string noResults = "No results found.";
+        const string searchIsFinished = "Search is finished.";
         StringComparison currentComparisonType = StringComparison.CurrentCulture;
 
         #region StringSearchResult type
@@ -88,69 +93,128 @@ namespace Task5_2
         {
             string stringToSearch = stringToSearchTextBox.Text;
             StringComparison newComparisonType = caseInsensitiveCheckBox.Checked ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
-            if (stringToSearch != "" && (stringToSearch != previousString || currentComparisonType != newComparisonType))
+            
+            if (filesToSearchListBox.Items.Count != 0 && stringToSearch != "" && (stringToSearch != previousString || currentComparisonType != newComparisonType))
             {
+                findStringButton.Enabled = false;
+
                 previousString = stringToSearch;
                 currentComparisonType = newComparisonType;
 
-                resultsListBox.BeginUpdate();
-
                 resultsListBox.Items.Clear();
-                StringSearchResult result = new StringSearchResult();
-                foreach (Object filePath in filesToSearchListBox.Items)
-                {
-                    result = searchInFile((string)filePath, stringToSearch, currentComparisonType);
-                    if (result.indexes.Count == 0)
-                        continue;
 
-                    StringBuilder resultAsString = new StringBuilder();
-                    resultAsString.Append(result.path + ": ");
-                    foreach (int index in result.indexes)
-                    {
-                        resultAsString.AppendFormat("{0}, ", index);
-                    }
-                    string output = resultAsString.ToString().TrimEnd(' ', ',');
-
-                    resultsListBox.Items.Add(output);
-                }
-
-                resultsListBox.EndUpdate();
+                Thread conveyerCreator = new Thread(new ParameterizedThreadStart(createConveyer));
+                conveyerCreator.IsBackground = true;
+                conveyerCreator.Start(stringToSearch);
             }
         }
         #endregion
 
+        #region multihreaded search
+        private void createConveyer(object data)
+        {
+            List<Thread> activeThreads = new List<Thread>(); 
+            foreach (object filePath in filesToSearchListBox.Items)
+            {
+                string fileData = dataFromFile((string)filePath);
+                if (fileData == null)
+                    continue;
+
+                Thread searchThread = new Thread(new ParameterizedThreadStart(performSearch));
+                activeThreads.Add(searchThread);
+
+                searchThread.IsBackground = true;
+                string stringToSearch = (string)data; // overhead for more clear understanding
+                object[] searchParams = new object[] { filePath, fileData, stringToSearch, currentComparisonType };
+                searchThread.Start(searchParams);
+            }
+
+            foreach(Thread th in activeThreads)
+            {
+                th.Join();
+            }
+
+            if (resultsListBox.Items.Count == 0)
+            {
+                Invoke(new AddSearchResultsDelegate(addSearchResult), noResults);
+            }
+            Invoke(new AddSearchResultsDelegate(addSearchResult), searchIsFinished);
+
+            Invoke(new MethodInvoker(setFindButtonEnabled));
+        }
+
+        private void setFindButtonEnabled()
+        {
+            findStringButton.Enabled = true;
+        }
+
+        private void performSearch(object data)
+        {
+            object[] searchParams = (object[])data;
+            String filePath = (string)searchParams[0];
+            String fileData = (string)searchParams[1];
+            String stringToSearch = (string)searchParams[2];
+            StringComparison comparisonType = (StringComparison)searchParams[3];          
+
+            StringSearchResult result = searchInFile(filePath, fileData, stringToSearch, currentComparisonType);
+            if (result.indexes.Count == 0)
+                return;
+
+            StringBuilder resultAsString = new StringBuilder();
+            resultAsString.Append(result.path + ": ");
+            foreach (int index in result.indexes)
+            {
+                resultAsString.AppendFormat("{0}, ", index);
+            }
+            string output = resultAsString.ToString().TrimEnd(' ', ',');
+
+            Invoke(new AddSearchResultsDelegate(addSearchResult), output);
+        }
+
+        private void addSearchResult(object result)
+        {
+            resultsListBox.Items.Add(result);
+        }
+        #endregion
+
         #region Help private methods
-        private StringSearchResult searchInFile(string path, string str, StringComparison comparisonType)
+        private string dataFromFile(string path)
+        {
+            string result;
+            try
+            {
+                StreamReader fsr = new StreamReader(path);
+                result = fsr.ReadToEnd();
+                fsr.Close();
+            }
+            catch
+            {
+                result = null;
+            }
+            return result;
+        }
+
+        private StringSearchResult searchInFile(string path, string data, string stringToSearch, StringComparison comparisonType)
         {
             StringSearchResult result = new StringSearchResult();
             result.path = path;
             result.indexes = new List<int>();
 
-            try
+            int index = 0;
+            while (true)
             {
-                StreamReader fsr = new StreamReader(path);
-                string fileContent = fsr.ReadToEnd();
-                fsr.Close();
+                index = data.IndexOf(stringToSearch, index, comparisonType);
+                if (index == -1)
+                    break;
 
-                int index = 0;
-                while (true)
-                {
-                    index = fileContent.IndexOf(str, index, comparisonType);
-                    if (index == -1)
-                        break;
+                result.indexes.Add(index + 1);
 
-                    result.indexes.Add(index + 1);
-
-                    index += str.Length;
-                }
-            }
-            catch
-            {
-                return result;
+                index += stringToSearch.Length;
             }
 
             return result;
         }
+
         private void changeInitialDirectory()
         {
             openFileDialog.InitialDirectory = openFileDialog.FileName.Remove(openFileDialog.FileName.LastIndexOf('\\'));
