@@ -67,30 +67,142 @@ namespace Tanks.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Tank_10 {
+        internal static System.Drawing.Bitmap TankImg_10 {
             get {
-                object obj = ResourceManager.GetObject("Tank_10", resourceCulture);
+                object obj = ResourceManager.GetObject("TankImg_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap Tank0_1 {
+        internal static System.Drawing.Bitmap TankImg_10I {
             get {
-                object obj = ResourceManager.GetObject("Tank0_1", resourceCulture);
+                object obj = ResourceManager.GetObject("TankImg_10I", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap Tank01 {
+        internal static System.Drawing.Bitmap TankImg_10II {
             get {
-                object obj = ResourceManager.GetObject("Tank01", resourceCulture);
+                object obj = ResourceManager.GetObject("TankImg_10II", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap Tank10 {
+        internal static System.Drawing.Bitmap TankImg_10III {
             get {
-                object obj = ResourceManager.GetObject("Tank10", resourceCulture);
+                object obj = ResourceManager.GetObject("TankImg_10III", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg_10IV {
+            get {
+                object obj = ResourceManager.GetObject("TankImg_10IV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg0_1 {
+            get {
+                object obj = ResourceManager.GetObject("TankImg0_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg0_1I {
+            get {
+                object obj = ResourceManager.GetObject("TankImg0_1I", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg0_1II {
+            get {
+                object obj = ResourceManager.GetObject("TankImg0_1II", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg0_1III {
+            get {
+                object obj = ResourceManager.GetObject("TankImg0_1III", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg0_1IV {
+            get {
+                object obj = ResourceManager.GetObject("TankImg0_1IV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg01 {
+            get {
+                object obj = ResourceManager.GetObject("TankImg01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg01I {
+            get {
+                object obj = ResourceManager.GetObject("TankImg01I", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg01II {
+            get {
+                object obj = ResourceManager.GetObject("TankImg01II", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg01III {
+            get {
+                object obj = ResourceManager.GetObject("TankImg01III", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg01IV {
+            get {
+                object obj = ResourceManager.GetObject("TankImg01IV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg10 {
+            get {
+                object obj = ResourceManager.GetObject("TankImg10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg10I {
+            get {
+                object obj = ResourceManager.GetObject("TankImg10I", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg10II {
+            get {
+                object obj = ResourceManager.GetObject("TankImg10II", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg10III {
+            get {
+                object obj = ResourceManager.GetObject("TankImg10III", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TankImg10IV {
+            get {
+                object obj = ResourceManager.GetObject("TankImg10IV", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8,33 +8,52 @@ namespace Tanks
 {
     class TankImg
     {
-        Image img0_1 = Properties.Resources.Tank0_1;
-        Image img01 = Properties.Resources.Tank01;
-        Image img10 = Properties.Resources.Tank10;
-        Image img_10 = Properties.Resources.Tank_10;
+        Image[] up = new Image[] { 
+            Properties.Resources.TankImg0_1,
+            Properties.Resources.TankImg0_1I,
+            Properties.Resources.TankImg0_1II,
+            Properties.Resources.TankImg0_1III,
+            Properties.Resources.TankImg0_1IV };
 
-        public Image Img0_1
+        Image[] down = new Image[] { 
+            Properties.Resources.TankImg01,
+            Properties.Resources.TankImg01I,
+            Properties.Resources.TankImg01II,
+            Properties.Resources.TankImg01III,
+            Properties.Resources.TankImg01IV };
+
+        Image[] right = new Image[] { 
+            Properties.Resources.TankImg10,
+            Properties.Resources.TankImg10I,
+            Properties.Resources.TankImg10II,
+            Properties.Resources.TankImg10III,
+            Properties.Resources.TankImg10IV };
+
+        Image[] left = new Image[] { 
+            Properties.Resources.TankImg_10,
+            Properties.Resources.TankImg_10I,
+            Properties.Resources.TankImg_10II,
+            Properties.Resources.TankImg_10III,
+            Properties.Resources.TankImg_10IV };
+
+        public Image[] Up
         {
-            get { return img0_1; }
-            set { img0_1 = value; }
+            get { return up; }
         }
 
-        public Image Img01
+        public Image[] Down
         {
-            get { return img01; }
-            set { img01 = value; }
+            get { return down; }
         }
 
-        public Image Img10
+        public Image[] Right
         {
-            get { return img10; }
-            set { img10 = value; }
+            get { return right; }
         }
 
-        public Image Img_10
+        public Image[] Left
         {
-            get { return img_10; }
-            set { img_10 = value; }
+            get { return left; }
         }
     }
 }
