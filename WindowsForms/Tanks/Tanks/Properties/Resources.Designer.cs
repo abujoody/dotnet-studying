@@ -67,9 +67,30 @@ namespace Tanks.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Tank {
+        internal static System.Drawing.Bitmap Tank_10 {
             get {
-                object obj = ResourceManager.GetObject("Tank", resourceCulture);
+                object obj = ResourceManager.GetObject("Tank_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Tank0_1 {
+            get {
+                object obj = ResourceManager.GetObject("Tank0_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Tank01 {
+            get {
+                object obj = ResourceManager.GetObject("Tank01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Tank10 {
+            get {
+                object obj = ResourceManager.GetObject("Tank10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
