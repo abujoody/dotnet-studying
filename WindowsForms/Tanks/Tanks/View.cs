@@ -37,7 +37,10 @@ namespace Tanks
 
         private void DrawTank(Graphics gr)
         {
-            gr.DrawImage(model.tank.CurrentImg, new Point(model.tank.X, model.tank.Y));
+            foreach (Tank t in model.Tanks)
+            {
+                gr.DrawImage(t.CurrentImg, new Point(t.X, t.Y));
+            }
         }
 
         private void DrawWall(Graphics gr)
