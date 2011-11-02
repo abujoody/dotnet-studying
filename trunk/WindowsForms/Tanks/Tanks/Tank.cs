@@ -29,18 +29,32 @@ namespace Tanks
             set { if (value == 0 || value == -1 || value == 1) direct_x = value; else direct_x = 0; }
         }
 
-        public Tank(int sizeField)
+        public Tank(int sizeField, int x, int y)
         {
             this.sizeField = sizeField;
 
             r = new Random();
 
-            Direct_x = 0;
-            Direct_y = 1;
+            Direct_x = r.Next(-1, 2);
+            if (r.Next(5000) < 2500)
+            {
+                Direct_y = 0;
+                while (Direct_x == 0)
+                    Direct_x = r.Next(-1, 2);
+            }
+            else
+            {
+                Direct_x = 0;
+                while (Direct_y == 0)
+                    Direct_y = r.Next(-1, 2);
+            }
 
             PutImg();
 
             PutCurrentImage();
+
+            this.x = x;
+            this.y = y;
         }
 
         public int Y
