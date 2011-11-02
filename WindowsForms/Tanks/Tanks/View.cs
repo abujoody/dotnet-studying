@@ -24,13 +24,32 @@ namespace Tanks
         void Draw(PaintEventArgs e)
         {
             Graphics gr = e.Graphics;
-            gr.DrawImage(model.tank.img, new Point(model.tank.x, model.tank.y));
 
+            DrawWall(gr);
+            DrawTank(gr);
+            
             if (model.gameStatus != GameStatus.playing)
                 return;
 
             Thread.Sleep(model.speedGame);
             Invalidate();
+        }
+
+        private void DrawTank(Graphics gr)
+        {
+            gr.DrawImage(model.tank.Img, new Point(model.tank.X, model.tank.Y));
+        }
+
+        private void DrawWall(Graphics gr)
+        {
+            for (int y = 20; y < 260; y += 40)
+            {
+                for (int x = 20; x < 260; x += 40)
+                {
+                    gr.DrawImage(model.wall.Img, new Point(x, y));
+                }
+            }
+            
         }
 
         protected override void OnPaint(PaintEventArgs e)
