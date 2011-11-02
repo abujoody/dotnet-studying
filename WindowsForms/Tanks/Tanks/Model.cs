@@ -25,7 +25,7 @@ namespace Tanks
             this.amountApples = amountApples;
             this.speedGame = speedGame;
 
-            tank = new Tank();
+            tank = new Tank(sizeField);
             wall = new Wall();
 
             gameStatus = GameStatus.stopping;
@@ -37,7 +37,6 @@ namespace Tanks
             {
                 Thread.Sleep(speedGame);
                 tank.Run();
-                tank.Turn();
             }
         }
     }

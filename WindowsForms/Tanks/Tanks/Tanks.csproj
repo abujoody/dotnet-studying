@@ -53,6 +53,7 @@
       <DependentUpon>Controller_MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GameStatus.cs" />
+    <Compile Include="ITransparent.cs" />
     <Compile Include="ICollision.cs" />
     <Compile Include="IRun.cs" />
     <Compile Include="ITakeApple.cs" />
