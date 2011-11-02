@@ -37,6 +37,7 @@ namespace Tanks
             {
                 Thread.Sleep(speedGame);
                 tank.Run();
+                tank.Turn();
             }
         }
     }
