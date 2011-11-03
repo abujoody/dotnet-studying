@@ -44,9 +44,9 @@ namespace Tanks
 
         private void DrawApple(Graphics gr)
         {
-            foreach (Apple a in model.Apples)
+            for (int i = 0; i < model.Apples.Count; i++)
             {
-                gr.DrawImage(a.Img, new Point(a.X, a.Y));
+                gr.DrawImage(model.Apples[i].Img, new Point(model.Apples[i].X, model.Apples[i].Y));
             }
         }
 
