@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Controller_MainForm));
-            this.button1 = new System.Windows.Forms.Button();
+            this.startPauseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // startPauseButton
             // 
-            this.button1.Location = new System.Drawing.Point(268, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 21);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Play / Stop";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ManipulatePackman);
+            this.startPauseButton.Location = new System.Drawing.Point(268, 12);
+            this.startPauseButton.Name = "startPauseButton";
+            this.startPauseButton.Size = new System.Drawing.Size(94, 21);
+            this.startPauseButton.TabIndex = 0;
+            this.startPauseButton.Text = "Play / Pause";
+            this.startPauseButton.UseVisualStyleBackColor = true;
+            this.startPauseButton.Click += new System.EventHandler(this.button1_Click);
+            this.startPauseButton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ManipulatePackman);
             // 
             // Controller_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 372);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.startPauseButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -61,7 +61,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startPauseButton;
     }
 }
 
