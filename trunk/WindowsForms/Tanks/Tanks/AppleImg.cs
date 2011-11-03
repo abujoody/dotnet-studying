@@ -6,9 +6,9 @@ using System.Drawing;
 
 namespace Tanks
 {
-    class WallImg
+    class AppleImg
     {
-        Image img = Properties.Resources.Wall;
+        Image img = Properties.Resources.Apple;
 
         public Image Img
         {
