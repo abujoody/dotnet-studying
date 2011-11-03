@@ -28,12 +28,18 @@ namespace Tanks
             DrawWall(gr);
             DrawApple(gr);
             DrawTank(gr);
-            
+            DrawPackman(gr);
+
             if (model.gameStatus != GameStatus.playing)
                 return;
 
             Thread.Sleep(model.speedGame);
             Invalidate();
+        }
+
+        private void DrawPackman(Graphics gr)
+        {
+            gr.DrawImage(model.Packman.CurrentImg, new Point(model.Packman.X, model.Packman.Y));
         }
 
         private void DrawApple(Graphics gr)
