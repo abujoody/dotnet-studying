@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace Tanks
 {
-    class Wall
+    class Wall : IPicture
     {
         WallImg wallImg = new WallImg();
         Image img;

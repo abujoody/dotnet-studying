@@ -55,10 +55,10 @@
       <DependentUpon>Controller_MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GameStatus.cs" />
+    <Compile Include="ICurrentPicture.cs" />
+    <Compile Include="IPicture.cs" />
     <Compile Include="ITransparent.cs" />
-    <Compile Include="ICollision.cs" />
     <Compile Include="IRun.cs" />
-    <Compile Include="ITakeApple.cs" />
     <Compile Include="ITurn.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
@@ -89,6 +89,7 @@
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MainDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
