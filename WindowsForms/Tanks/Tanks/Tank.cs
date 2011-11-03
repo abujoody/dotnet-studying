@@ -147,5 +147,12 @@ namespace Tanks
             else if (direct_y == -1)
                 img = tankImg.Up;
         }
+
+        public void TurnAround()
+        {
+            Direct_x = -1 * Direct_x;
+            Direct_y = -1 * Direct_y;
+            PutImg();
+        }
     }
 }
