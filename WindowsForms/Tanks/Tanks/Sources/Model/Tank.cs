@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace Tanks
 {
-    class Tank : IRun, ITurn, ITransparent, ICurrentPicture
+    class Tank : IRun, ITurn, ITurnAround, ITransparent, ICurrentPicture
     {
         TankImg tankImg = new TankImg();
         Image[] img;
@@ -27,6 +27,21 @@ namespace Tanks
         {
             get { return direct_x; }
             set { if (value == 0 || value == -1 || value == 1) direct_x = value; else direct_x = 0; }
+        }
+
+        public int Y
+        {
+            get { return y; }
+        }
+
+        public int X
+        {
+          get { return x; }
+        }
+
+        public Image CurrentImg
+        {
+            get { return currentImg; }
         }
 
         public Tank(int sizeField, int x, int y)
@@ -55,21 +70,6 @@ namespace Tanks
 
             this.x = x;
             this.y = y;
-        }
-
-        public int Y
-        {
-            get { return y; }
-        }
-
-        public int X
-        {
-          get { return x; }
-        }
-
-        public Image CurrentImg
-        {
-            get { return currentImg; }
         }
 
         int k;
