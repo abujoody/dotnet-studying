@@ -163,7 +163,7 @@ namespace Tanks
 
                 for (int i = 0; i < apples.Count; i++)
                 {
-                    if (packman.X == apples[i].X && packman.Y == apples[i].Y)
+                    if (Math.Abs(packman.X - apples[i].X) <= 1 && Math.Abs(packman.Y - apples[i].Y) <= 1)
                     {
                         apples[i] = new Apple(step += 30, 270);
                         collectedApples++;
