@@ -153,7 +153,7 @@ namespace Tanks
                 }
 
                 if (collectedApples > 4)
-                    gameStatus = GameStatus.stopping;
+                    gameStatus = GameStatus.winner;
             }
         }
 
