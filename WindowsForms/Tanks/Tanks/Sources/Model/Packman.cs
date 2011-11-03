@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace Tanks.Sources.Model
+namespace Tanks
 {
     class Packman : IRun, ITurn, ITransparent, ICurrentPicture
     {
@@ -45,12 +45,14 @@ namespace Tanks.Sources.Model
         {
             this.sizeField = sizeField;
 
+            this.x = 120;
+            this.y = 240;
+            this.Direct_x = 0;
+            this.Direct_y = -1;
+
             PutImg();
 
-            PutCurrentImage();
-
-            this.x = 120;
-            this.y = 200;
+            PutCurrentImage();            
         }
 
         public void Run()

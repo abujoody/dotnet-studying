@@ -17,6 +17,8 @@ namespace Tanks
 
         static Random r;
 
+        Packman packman;
+
         List<Tank> tanks;
         List<Apple> apples;
 
@@ -30,6 +32,12 @@ namespace Tanks
         internal List<Apple> Apples
         {
             get { return apples; }
+        }
+
+        internal Packman Packman
+        {
+            get { return packman; }
+            set { packman = value; }
         }
 
         public Model(int sizeField, int amountTanks, int amountApples, int speedGame)
@@ -47,6 +55,7 @@ namespace Tanks
             CreateTanks();
             CreateApples();
             wall = new Wall();
+            packman = new Packman(sizeField);
 
             gameStatus = GameStatus.stopping;
         }
@@ -108,6 +117,8 @@ namespace Tanks
             while (gameStatus == GameStatus.playing)
             {
                 Thread.Sleep(speedGame);
+
+                packman.Run();
                 foreach (Tank t in tanks)
                     t.Run();
 

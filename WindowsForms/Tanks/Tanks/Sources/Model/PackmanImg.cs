@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace Tanks.Sources.Model
+namespace Tanks
 {
     class PackmanImg
     {
