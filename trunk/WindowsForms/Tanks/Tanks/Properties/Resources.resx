@@ -124,6 +124,66 @@
   <data name="MainIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PackmanImg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\down\packmanimg01.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg01I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\down\packmanimg01i.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg01II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\down\packmanimg01ii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg01III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\down\packmanimg01iii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg01IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\down\packmanimg01iv.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\up\packmanimg0_1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg0_1I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\up\packmanimg0_1i.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg0_1II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\up\packmanimg0_1ii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg0_1III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\up\packmanimg0_1iii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg0_1IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\up\packmanimg0_1iv.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\right\packmanimg10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg10I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\right\packmanimg10i.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg10II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\right\packmanimg10ii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg10III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\right\packmanimg10iii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg10IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\right\packmanimg10iv.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\left\packmanimg_10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg_10I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\left\packmanimg_10i.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg_10II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\left\packmanimg_10ii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg_10III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\left\packmanimg_10iii.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PackmanImg_10IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\packmandirections\left\packmanimg_10iv.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TankImg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TanksDirections\DOWN\TankImg01.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
