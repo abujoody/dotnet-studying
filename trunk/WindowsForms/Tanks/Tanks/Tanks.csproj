@@ -61,6 +61,8 @@
     <Compile Include="Sources\Interfaces\IRun.cs" />
     <Compile Include="Sources\Interfaces\ITurn.cs" />
     <Compile Include="Sources\Interfaces\ITurnAround.cs" />
+    <Compile Include="Sources\Model\Hunter.cs" />
+    <Compile Include="Sources\Model\HunterImg.cs" />
     <Compile Include="Sources\Model\Model.cs" />
     <Compile Include="Sources\Application\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +113,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Apple.bmp" />
+    <None Include="Resources\HunterDirections\Down\HunterImg01.bmp" />
+    <None Include="Resources\HunterDirections\Down\HunterImg01I.bmp" />
+    <None Include="Resources\HunterDirections\Down\HunterImg01II.bmp" />
+    <None Include="Resources\HunterDirections\Down\HunterImg01III.bmp" />
+    <None Include="Resources\HunterDirections\Down\HunterImg01IV.bmp" />
+    <None Include="Resources\HunterDirections\LEFT\HunterImg_10.bmp" />
+    <None Include="Resources\HunterDirections\LEFT\HunterImg_10I.bmp" />
+    <None Include="Resources\HunterDirections\LEFT\HunterImg_10II.bmp" />
+    <None Include="Resources\HunterDirections\LEFT\HunterImg_10III.bmp" />
+    <None Include="Resources\HunterDirections\LEFT\HunterImg_10IV.bmp" />
+    <None Include="Resources\HunterDirections\RIGHT\HunterImg10.bmp" />
+    <None Include="Resources\HunterDirections\RIGHT\HunterImg10I.bmp" />
+    <None Include="Resources\HunterDirections\RIGHT\HunterImg10II.bmp" />
+    <None Include="Resources\HunterDirections\RIGHT\HunterImg10III.bmp" />
+    <None Include="Resources\HunterDirections\RIGHT\HunterImg10IV.bmp" />
+    <None Include="Resources\HunterDirections\UP\HunterImg0_1.bmp" />
+    <None Include="Resources\HunterDirections\UP\HunterImg0_1I.bmp" />
+    <None Include="Resources\HunterDirections\UP\HunterImg0_1II.bmp" />
+    <None Include="Resources\HunterDirections\UP\HunterImg0_1III.bmp" />
+    <None Include="Resources\HunterDirections\UP\HunterImg0_1IV.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01I.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01II.bmp" />

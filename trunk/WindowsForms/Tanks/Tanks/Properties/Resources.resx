@@ -121,6 +121,66 @@
   <data name="Apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\apple.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HunterImg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\Down\HunterImg01.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg01I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\Down\HunterImg01I.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg01II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\Down\HunterImg01II.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg01III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\Down\HunterImg01III.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg01IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\Down\HunterImg01IV.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\UP\HunterImg0_1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg0_1I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\UP\HunterImg0_1I.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg0_1II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\UP\HunterImg0_1II.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg0_1III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\UP\HunterImg0_1III.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg0_1IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\UP\HunterImg0_1IV.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\RIGHT\HunterImg10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg10I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\RIGHT\HunterImg10I.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg10II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\RIGHT\HunterImg10II.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg10III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\RIGHT\HunterImg10III.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg10IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\RIGHT\HunterImg10IV.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\LEFT\HunterImg_10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg_10I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\LEFT\HunterImg_10I.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg_10II" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\LEFT\HunterImg_10II.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg_10III" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\LEFT\HunterImg_10III.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HunterImg_10IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HunterDirections\LEFT\HunterImg_10IV.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MainIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

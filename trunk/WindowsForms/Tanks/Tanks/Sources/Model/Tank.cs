@@ -8,14 +8,28 @@ namespace Tanks
 {
     class Tank : IRun, ITurn, ITurnAround, ITransparent, ICurrentPicture
     {
-        TankImg tankImg = new TankImg();
-        Image[] img;
-        Image currentImg;
+        private TankImg tankImg = new TankImg();
 
-        int x, y, direct_x, direct_y;
-        int sizeField;
+        protected virtual void PutImg()
+        {
+            if (direct_x == 1)
+                img = tankImg.Right;
+            else if (direct_x == -1)
+                img = tankImg.Left;
 
-        static Random r;
+            if (direct_y == 1)
+                img = tankImg.Down;
+            else if (direct_y == -1)
+                img = tankImg.Up;
+        }
+
+        protected Image[] img;
+        protected Image currentImg;
+
+        protected int x, y, direct_x, direct_y;
+        protected int sizeField;
+
+        protected static Random r;
 
         public int Direct_y
         {
@@ -36,7 +50,7 @@ namespace Tanks
 
         public int X
         {
-          get { return x; }
+            get { return x; }
         }
 
         public Image CurrentImg
@@ -72,8 +86,8 @@ namespace Tanks
             this.y = y;
         }
 
-        int k;
-        private void PutCurrentImage()
+        protected int k;
+        protected void PutCurrentImage()
         {
             currentImg = img[k];
             k++;
@@ -133,19 +147,6 @@ namespace Tanks
                 y = sizeField - 21;
             if (y == sizeField - 19)
                 y = 1;
-        }
-
-        void PutImg()
-        {
-            if (direct_x == 1)
-                img = tankImg.Right;
-            else if (direct_x == -1)
-                img = tankImg.Left;
-
-            if (direct_y == 1)
-                img = tankImg.Down;
-            else if (direct_y == -1)
-                img = tankImg.Up;
         }
 
         public void TurnAround()
