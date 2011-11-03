@@ -95,7 +95,7 @@ namespace Tanks
         private void CreateTanks()
         {
             int x, y;
-            while (tanks.Count < amountTanks)
+            while (tanks.Count < amountTanks + 1)
             {
                 x = r.Next(6) * 40;
                 y = r.Next(6) * 40;
@@ -113,7 +113,12 @@ namespace Tanks
                 if (alreadyExists == true)
                     continue;
 
-                Tank newTank = new Tank(sizeField, x, y);
+                Tank newTank;
+                if (tanks.Count != 0)
+                    newTank = new Tank(sizeField, x, y);
+                else
+                    newTank = new Hunter(sizeField, x, y);
+
                 tanks.Add(newTank);
             }
         }
@@ -125,8 +130,11 @@ namespace Tanks
                 Thread.Sleep(speedGame);
 
                 packman.Run();
-                foreach (Tank t in tanks)
-                    t.Run();
+                ((Hunter)tanks[0]).Run(packman.X, packman.Y);
+                for (int i = 1; i < tanks.Count; i++)
+                {
+                    tanks[i].Run();
+                }
 
                 for (int i = 0; i < tanks.Count - 1; i++)
                 {
@@ -141,7 +149,7 @@ namespace Tanks
 
                             )
                         {
-                            tanks[i].TurnAround();
+                                tanks[i].TurnAround();
                             tanks[j].TurnAround();
                         }
                     }
