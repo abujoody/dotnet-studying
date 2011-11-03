@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace Tanks
+namespace Tanks 
 {
-    class Apple
+    class Apple : IPicture
     {
         AppleImg appleImg = new AppleImg();
         Image img;

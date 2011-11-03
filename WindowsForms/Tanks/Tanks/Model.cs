@@ -56,8 +56,8 @@ namespace Tanks
             int x, y;
             while (apples.Count < amountApples)
             {
-                x = r.Next(7) * 40;
-                y = r.Next(7) * 40;
+                x = r.Next(6) * 40;
+                y = r.Next(6) * 40;
 
                 bool alreadyExists = false;
                 foreach (Apple a in apples)
@@ -82,8 +82,8 @@ namespace Tanks
             int x, y;
             while (tanks.Count < amountTanks)
             {
-                x = r.Next(7) * 40;
-                y = r.Next(7) * 40;
+                x = r.Next(6) * 40;
+                y = r.Next(6) * 40;
 
                 bool alreadyExists = false;
                 foreach (Tank t in tanks)

@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace Tanks
 {
-    class Tank : IRun, ITurn, ITransparent
+    class Tank : IRun, ITurn, ITransparent, ICurrentPicture
     {
         TankImg tankImg = new TankImg();
         Image[] img;
