@@ -13,7 +13,7 @@
     <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAFgAAAAYAA=</HashCode>
-      <FileName>Apple.cs</FileName>
+      <FileName>Sources\Model\Apple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -21,28 +21,28 @@
     <Position X="2.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AppleImg.cs</FileName>
+      <FileName>Sources\Model\AppleImg.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tanks.Controller_MainForm" Collapsed="true">
     <Position X="4.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAEAAACAAAAAAAACAAAACCAAIAACAAUAAEAIIAAA=</HashCode>
-      <FileName>Controller_MainForm.cs</FileName>
+      <FileName>Sources\Controller\Controller_MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tanks.Model" Collapsed="true">
     <Position X="1.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAFAAAAAABAAAAAQQAAAAAAAgQgAENAAAAAAA=</HashCode>
-      <FileName>Model.cs</FileName>
+      <FileName>Sources\Model\Model.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tanks.Program" Collapsed="true">
     <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
+      <FileName>Sources\Application\Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tanks.Tank" Collapsed="true" BaseTypeListCollapsed="true">
@@ -54,7 +54,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAEAAEAAAEoQAAAACAAAgCAAAIQQAgABhQAACYAI=</HashCode>
-      <FileName>Tank.cs</FileName>
+      <FileName>Sources\Model\Tank.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -62,21 +62,21 @@
     <Position X="2.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAACAAAAAAAAAAAAAAAIAAAACACAAgAAgAI=</HashCode>
-      <FileName>TankImg.cs</FileName>
+      <FileName>Sources\Model\TankImg.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tanks.View" Collapsed="true">
     <Position X="6.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAEAACAAAgAAAACAAAACQAAAAAABAAAAAAAIAAA=</HashCode>
-      <FileName>View.cs</FileName>
+      <FileName>Sources\View\View.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tanks.Wall" Collapsed="true">
     <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Wall.cs</FileName>
+      <FileName>Sources\Model\Wall.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -84,7 +84,7 @@
     <Position X="2.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>WallImg.cs</FileName>
+      <FileName>Sources\Model\WallImg.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tanks.Properties.Resources" Collapsed="true">
@@ -103,42 +103,42 @@
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>IRun.cs</FileName>
+      <FileName>Sources\Interfaces\IRun.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Tanks.ITransparent">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ITransparent.cs</FileName>
+      <FileName>Sources\Interfaces\ITransparent.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Tanks.ITurn">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>ITurn.cs</FileName>
+      <FileName>Sources\Interfaces\ITurn.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Tanks.IPicture">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IPicture.cs</FileName>
+      <FileName>Sources\Interfaces\IPicture.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Tanks.ICurrentPicture">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ICurrentPicture.cs</FileName>
+      <FileName>Sources\Interfaces\ICurrentPicture.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Tanks.GameStatus" Collapsed="true">
     <Position X="1.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAIAAIAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameStatus.cs</FileName>
+      <FileName>Sources\Model\GameStatus.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
