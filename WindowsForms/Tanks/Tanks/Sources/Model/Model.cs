@@ -147,6 +147,20 @@ namespace Tanks
                     }
                 }
 
+                for (int i = 0; i < tanks.Count; i++)
+                {
+                    if (
+                        (Math.Abs(tanks[i].X - packman.X) <= 19 && (tanks[i].Y == packman.Y))
+                        ||
+                        Math.Abs(tanks[i].Y - packman.Y) <= 19 && (tanks[i].X == packman.X)
+                        ||
+                        (Math.Abs(tanks[i].X - packman.X) <= 19 && Math.Abs(tanks[i].Y - packman.Y) <= 19)
+                        )
+                    {
+                        gameStatus = GameStatus.looser;
+                    }
+                }
+
                 for (int i = 0; i < apples.Count; i++)
                 {
                     if (packman.X == apples[i].X && packman.Y == apples[i].Y)
