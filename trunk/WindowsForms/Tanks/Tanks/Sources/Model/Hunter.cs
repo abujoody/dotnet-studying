@@ -7,8 +7,6 @@ namespace Tanks
 {
     class Hunter : Tank
     {
-        int target_x, target_y;
-
         HunterImg hunterImg = new HunterImg();
         protected override void PutImg()
         {
@@ -34,6 +32,8 @@ namespace Tanks
 
         public void Turn(int target_x, int target_y)
         {
+            Direct_x = Direct_y = 0; 
+
             if (X > target_x)
                 Direct_x = -1;
             if (X < target_x)
@@ -56,9 +56,6 @@ namespace Tanks
 
         public void Run(int target_x, int target_y)
         {
-            this.target_x = target_x;
-            this.target_y = target_y;
-
             x += direct_x;
             y += direct_y;
             if (Math.IEEERemainder(x, 40) == 0 && Math.IEEERemainder(y, 40) == 0)

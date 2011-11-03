@@ -143,14 +143,14 @@ namespace Tanks
                         if (
                             (Math.Abs(tanks[i].X - tanks[j].X) <= 20 && (tanks[i].Y == tanks[j].Y))
                             ||
-                            Math.Abs(tanks[j].Y - tanks[j].Y) <= 20 && (tanks[i].X == tanks[j].X)
+                            Math.Abs(tanks[i].Y - tanks[j].Y) <= 20 && (tanks[i].X == tanks[j].X)
                             ||
                             (Math.Abs(tanks[i].X - tanks[j].X) <= 20 && Math.Abs(tanks[i].Y - tanks[j].Y) <= 20)
 
                             )
                         {
                                 tanks[i].TurnAround();
-                            tanks[j].TurnAround();
+                                tanks[j].TurnAround();
                         }
                     }
                 }
