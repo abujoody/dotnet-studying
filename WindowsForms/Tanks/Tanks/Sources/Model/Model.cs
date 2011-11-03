@@ -54,11 +54,16 @@ namespace Tanks
             this.speedGame = speedGame;
 
             CreateTanks();
-            CreateApples(0);
+            CreateApples();
             wall = new Wall();
             packman = new Packman(sizeField);
 
             gameStatus = GameStatus.stopping;
+        }
+
+        private void CreateApples()
+        {
+            CreateApples(0);
         }
 
         private void CreateApples(int newApples)
