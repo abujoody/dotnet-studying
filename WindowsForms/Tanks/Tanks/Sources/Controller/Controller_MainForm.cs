@@ -67,5 +67,38 @@ namespace Tanks
             else
                 e.Cancel = true;
         }
+
+        private void ManipulatePackman(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar)
+            {
+                case 'a':
+                case 'A':
+                    model.Packman.NextDirect_x = -1;
+                    model.Packman.NextDirect_y = 0;
+                    break;
+
+                case 'd':
+                case 'D':
+                    model.Packman.NextDirect_x = 1;
+                    model.Packman.NextDirect_y = 0;
+                    break;
+
+                case 'w':
+                case 'W':
+                    model.Packman.NextDirect_x = 0;
+                    model.Packman.NextDirect_y = -1;
+                    break;
+
+                case 's':
+                case 'S':
+                    model.Packman.NextDirect_x = 0;
+                    model.Packman.NextDirect_y = 1;
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }

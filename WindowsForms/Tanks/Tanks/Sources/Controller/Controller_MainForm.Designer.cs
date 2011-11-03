@@ -41,6 +41,7 @@
             this.button1.Text = "Play / Stop";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ManipulatePackman);
             // 
             // Controller_MainForm
             // 

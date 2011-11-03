@@ -11,12 +11,18 @@ namespace Tanks
         PackmanImg packmanImg = new PackmanImg();
         Image[] img;
         Image currentImg;
-        int x, y, direct_x, direct_y;
+        int x, y, direct_x, direct_y, nextDirect_x, nextDirect_y;
         int sizeField;
 
         public Image CurrentImg
         {
             get { return currentImg; }
+        }
+
+        public int Direct_x
+        {
+            get { return direct_x; }
+            set { if (value == 0 || value == -1 || value == 1) direct_x = value; else direct_x = 0; }
         }
 
         public int Direct_y
@@ -25,10 +31,16 @@ namespace Tanks
             set { if (value == 0 || value == -1 || value == 1) direct_y = value; else direct_y = 0; }
         }
 
-        public int Direct_x
+        public int NextDirect_x
         {
-            get { return direct_x; }
-            set { if (value == 0 || value == -1 || value == 1) direct_x = value; else direct_x = 0; }
+            get { return nextDirect_x; }
+            set { if (value == 0 || value == -1 || value == 1) nextDirect_x = value; else nextDirect_x = 0; }
+        }
+
+        public int NextDirect_y
+        {
+            get { return nextDirect_y; }
+            set { if (value == 0 || value == -1 || value == 1) nextDirect_y = value; else nextDirect_y = 0; }
         }
 
         public int Y
@@ -49,6 +61,8 @@ namespace Tanks
             this.y = 240;
             this.Direct_x = 0;
             this.Direct_y = -1;
+            this.nextDirect_x = 0;
+            this.nextDirect_y = -1;
 
             PutImg();
 
@@ -92,9 +106,8 @@ namespace Tanks
 
         public void Turn()
         {
-            //Implement!!!
-            //.............
-            //
+            Direct_x = NextDirect_x;
+            Direct_y = NextDirect_y;
 
             PutImg();
         }
