@@ -8,6 +8,7 @@ namespace Tanks
 {
     class Model
     {
+        int collectedApples;
         int sizeField;
         int amountTanks;
         int amountApples;
@@ -53,17 +54,17 @@ namespace Tanks
             this.speedGame = speedGame;
 
             CreateTanks();
-            CreateApples();
+            CreateApples(0);
             wall = new Wall();
             packman = new Packman(sizeField);
 
             gameStatus = GameStatus.stopping;
         }
 
-        private void CreateApples()
+        private void CreateApples(int newApples)
         {
             int x, y;
-            while (apples.Count < amountApples)
+            while (apples.Count < amountApples + newApples)
             {
                 x = r.Next(6) * 40;
                 y = r.Next(6) * 40;
@@ -114,7 +115,7 @@ namespace Tanks
 
         public void Play()
         {
-            while (gameStatus == GameStatus.playing)
+            while (gameStatus == GameStatus.playing && collectedApples < 5)
             {
                 Thread.Sleep(speedGame);
 
@@ -140,7 +141,22 @@ namespace Tanks
                         }
                     }
                 }
+
+                for (int i = 0; i < apples.Count; i++)
+                {
+                    if (packman.X == apples[i].X && packman.Y == apples[i].Y)
+                    {
+                        apples[i] = new Apple(step += 30, 270);
+                        collectedApples++;
+                        CreateApples(collectedApples);
+                    }
+                }
+
+                if (collectedApples > 4)
+                    gameStatus = GameStatus.stopping;
             }
         }
+
+        int step = -30;
     }
 }
