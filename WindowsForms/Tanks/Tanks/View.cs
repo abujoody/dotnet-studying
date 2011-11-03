@@ -26,6 +26,7 @@ namespace Tanks
             Graphics gr = e.Graphics;
 
             DrawWall(gr);
+            DrawApple(gr);
             DrawTank(gr);
             
             if (model.gameStatus != GameStatus.playing)
@@ -33,6 +34,14 @@ namespace Tanks
 
             Thread.Sleep(model.speedGame);
             Invalidate();
+        }
+
+        private void DrawApple(Graphics gr)
+        {
+            foreach (Apple a in model.Apples)
+            {
+                gr.DrawImage(a.Img, new Point(a.X, a.Y));
+            }
         }
 
         private void DrawTank(Graphics gr)

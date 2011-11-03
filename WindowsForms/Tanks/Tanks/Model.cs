@@ -18,12 +18,18 @@ namespace Tanks
         static Random r;
 
         List<Tank> tanks;
+        List<Apple> apples;
+
         public Wall wall;
 
         internal List<Tank> Tanks
         {
             get { return tanks; }
-            set { tanks = value; }
+        }
+
+        internal List<Apple> Apples
+        {
+            get { return apples; }
         }
 
         public Model(int sizeField, int amountTanks, int amountApples, int speedGame)
@@ -31,6 +37,7 @@ namespace Tanks
             r = new Random();
 
             tanks = new List<Tank>();
+            apples = new List<Apple>();
 
             this.sizeField = sizeField;
             this.amountTanks = amountTanks;
@@ -38,9 +45,36 @@ namespace Tanks
             this.speedGame = speedGame;
 
             CreateTanks();
+            CreateApples();
             wall = new Wall();
 
             gameStatus = GameStatus.stopping;
+        }
+
+        private void CreateApples()
+        {
+            int x, y;
+            while (apples.Count < amountApples)
+            {
+                x = r.Next(7) * 40;
+                y = r.Next(7) * 40;
+
+                bool alreadyExists = false;
+                foreach (Apple a in apples)
+                {
+                    if (a.X == x && a.Y == y)
+                    {
+                        alreadyExists = true;
+                        break;
+                    }
+                }
+
+                if (alreadyExists == true)
+                    continue;
+
+                Apple newApple = new Apple(x, y);
+                apples.Add(newApple);
+            }
         }
 
         private void CreateTanks()
@@ -48,8 +82,8 @@ namespace Tanks
             int x, y;
             while (tanks.Count < amountTanks)
             {
-                x = r.Next(6) * 40;
-                y = r.Next(6) * 40;
+                x = r.Next(7) * 40;
+                y = r.Next(7) * 40;
 
                 bool alreadyExists = false;
                 foreach (Tank t in tanks)
