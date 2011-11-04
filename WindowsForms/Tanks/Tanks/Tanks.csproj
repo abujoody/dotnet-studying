@@ -54,6 +54,8 @@
     <Compile Include="Sources\Controller\Controller_MainForm.Designer.cs">
       <DependentUpon>Controller_MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sources\Model\FireTank.cs" />
+    <Compile Include="Sources\Model\FireTankImg.cs" />
     <Compile Include="Sources\Model\GameStatus.cs" />
     <Compile Include="Sources\Interfaces\ICurrentPicture.cs" />
     <Compile Include="Sources\Interfaces\IPicture.cs" />
@@ -135,6 +137,12 @@
     <None Include="Resources\HunterDirections\UP\HunterImg0_1II.bmp" />
     <None Include="Resources\HunterDirections\UP\HunterImg0_1III.bmp" />
     <None Include="Resources\HunterDirections\UP\HunterImg0_1IV.bmp" />
+    <None Include="Resources\FireTank\FireTank1.bmp" />
+    <None Include="Resources\FireTank\FireTank2.bmp" />
+    <None Include="Resources\FireTank\FireTank3.bmp" />
+    <None Include="Resources\FireTank\FireTank4.bmp" />
+    <None Include="Resources\FireTank\FireTank5.bmp" />
+    <None Include="Resources\FireTank\FireTank6.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01I.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01II.bmp" />

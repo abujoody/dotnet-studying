@@ -67,6 +67,48 @@ namespace Tanks.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap FireTank1 {
+            get {
+                object obj = ResourceManager.GetObject("FireTank1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FireTank2 {
+            get {
+                object obj = ResourceManager.GetObject("FireTank2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FireTank3 {
+            get {
+                object obj = ResourceManager.GetObject("FireTank3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FireTank4 {
+            get {
+                object obj = ResourceManager.GetObject("FireTank4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FireTank5 {
+            get {
+                object obj = ResourceManager.GetObject("FireTank5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FireTank6 {
+            get {
+                object obj = ResourceManager.GetObject("FireTank6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap HunterImg_10 {
             get {
                 object obj = ResourceManager.GetObject("HunterImg_10", resourceCulture);

@@ -26,8 +26,9 @@ namespace Tanks
             Graphics gr = e.Graphics;
 
             DrawWall(gr);
-            DrawApple(gr);
-            DrawTank(gr);
+            DrawFireTank(gr);
+            DrawApples(gr);
+            DrawTanks(gr);
             DrawPackman(gr);
             DrawProjectile(gr);
 
@@ -36,6 +37,14 @@ namespace Tanks
 
             Thread.Sleep(model.speedGame);
             Invalidate();
+        }
+
+        private void DrawFireTank(Graphics gr)
+        {
+            foreach (FireTank ft in model.FireTanks)
+            {
+                gr.DrawImage(ft.CurrentImage, new Point(ft.X, ft.Y));
+            }
         }
 
         private void DrawProjectile(Graphics gr)
@@ -48,7 +57,7 @@ namespace Tanks
             gr.DrawImage(model.Packman.CurrentImg, new Point(model.Packman.X, model.Packman.Y));
         }
 
-        private void DrawApple(Graphics gr)
+        private void DrawApples(Graphics gr)
         {
             for (int i = 0; i < model.Apples.Count; i++)
             {
@@ -56,7 +65,7 @@ namespace Tanks
             }
         }
 
-        private void DrawTank(Graphics gr)
+        private void DrawTanks(Graphics gr)
         {
             foreach (Tank t in model.Tanks)
             {
