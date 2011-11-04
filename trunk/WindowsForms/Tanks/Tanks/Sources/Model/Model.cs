@@ -22,6 +22,7 @@ namespace Tanks
         Projectile projectile;
 
         List<Tank> tanks;
+        List<FireTank> fireTanks;
         List<Apple> apples;
 
         public Wall wall;
@@ -29,6 +30,12 @@ namespace Tanks
         internal List<Tank> Tanks
         {
             get { return tanks; }
+        }
+
+        internal List<FireTank> FireTanks
+        {
+            get { return fireTanks; }
+            set { fireTanks = value; }
         }
 
         internal List<Apple> Apples
@@ -53,6 +60,7 @@ namespace Tanks
             r = new Random();
 
             tanks = new List<Tank>();
+            fireTanks = new List<FireTank>();
             apples = new List<Apple>();
 
             this.sizeField = sizeField;
@@ -145,24 +153,36 @@ namespace Tanks
                     tanks[i].Run();
                 }
 
-                for (int i = 0; i < tanks.Count - 1; i++)
+                foreach (FireTank ft in fireTanks)
                 {
-                    for (int j = i + 1; j < tanks.Count; j++)
-                    {
-                        if (
-                            (Math.Abs(tanks[i].X - tanks[j].X) <= 20 && (tanks[i].Y == tanks[j].Y))
-                            ||
-                            Math.Abs(tanks[i].Y - tanks[j].Y) <= 20 && (tanks[i].X == tanks[j].X)
-                            ||
-                            (Math.Abs(tanks[i].X - tanks[j].X) <= 20 && Math.Abs(tanks[i].Y - tanks[j].Y) <= 20)
+                    ft.Fire();
+                }
 
-                            )
+                for (int i = 1; i < tanks.Count; i++)
+                    if (Math.Abs(tanks[i].X - projectile.X) < 11 && Math.Abs(tanks[i].Y - projectile.Y) < 11)
+                    {
+                        fireTanks.Add(new FireTank(tanks[i].X, tanks[i].Y));
+                        tanks.RemoveAt(i);
+                    }
+
+                    for (int i = 0; i < tanks.Count - 1; i++)
+                    {
+                        for (int j = i + 1; j < tanks.Count; j++)
                         {
+                            if (
+                                (Math.Abs(tanks[i].X - tanks[j].X) <= 20 && (tanks[i].Y == tanks[j].Y))
+                                ||
+                                Math.Abs(tanks[i].Y - tanks[j].Y) <= 20 && (tanks[i].X == tanks[j].X)
+                                ||
+                                (Math.Abs(tanks[i].X - tanks[j].X) <= 20 && Math.Abs(tanks[i].Y - tanks[j].Y) <= 20)
+
+                                )
+                            {
                                 tanks[i].TurnAround();
                                 tanks[j].TurnAround();
+                            }
                         }
                     }
-                }
 
                 for (int i = 0; i < tanks.Count; i++)
                 {
