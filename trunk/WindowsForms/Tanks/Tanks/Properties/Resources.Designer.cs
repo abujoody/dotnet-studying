@@ -396,6 +396,20 @@ namespace Tanks.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap PauseButton {
+            get {
+                object obj = ResourceManager.GetObject("PauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap PlayButton {
+            get {
+                object obj = ResourceManager.GetObject("PlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Projectile_10 {
             get {
                 object obj = ResourceManager.GetObject("Projectile_10", resourceCulture);

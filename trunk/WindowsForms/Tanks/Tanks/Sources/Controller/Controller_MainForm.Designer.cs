@@ -28,40 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Controller_MainForm));
-            this.startPauseButton = new System.Windows.Forms.Button();
+            this.StartStopButton = new System.Windows.Forms.PictureBox();
+            this.Help_Ttip = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.StartStopButton)).BeginInit();
             this.SuspendLayout();
             // 
-            // startPauseButton
+            // StartStopButton
             // 
-            this.startPauseButton.Location = new System.Drawing.Point(268, 12);
-            this.startPauseButton.Name = "startPauseButton";
-            this.startPauseButton.Size = new System.Drawing.Size(94, 21);
-            this.startPauseButton.TabIndex = 0;
-            this.startPauseButton.Text = "Play / Pause";
-            this.startPauseButton.UseVisualStyleBackColor = true;
-            this.startPauseButton.Click += new System.EventHandler(this.button1_Click);
-            this.startPauseButton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ManipulatePackman);
+            this.StartStopButton.Image = global::Tanks.Properties.Resources.PlayButton;
+            this.StartStopButton.Location = new System.Drawing.Point(281, 12);
+            this.StartStopButton.Name = "StartStopButton";
+            this.StartStopButton.Size = new System.Drawing.Size(81, 81);
+            this.StartStopButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.StartStopButton.TabIndex = 0;
+            this.StartStopButton.TabStop = false;
+            this.Help_Ttip.SetToolTip(this.StartStopButton, "Click Button To Start Game");
+            this.StartStopButton.Click += new System.EventHandler(this.StartStopButton_Click);
+            // 
+            // Help_Ttip
+            // 
+            this.Help_Ttip.IsBalloon = true;
+            this.Help_Ttip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.Help_Ttip.ToolTipTitle = "Tanks 1.0";
             // 
             // Controller_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(374, 372);
-            this.Controls.Add(this.startPauseButton);
+            this.Controls.Add(this.StartStopButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Controller_MainForm";
             this.Text = "Танки";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Controller_MainForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.StartStopButton)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button startPauseButton;
+        private System.Windows.Forms.PictureBox StartStopButton;
+        private System.Windows.Forms.ToolTip Help_Ttip;
+
     }
 }
 
