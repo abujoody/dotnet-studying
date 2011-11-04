@@ -67,6 +67,13 @@ namespace Tanks.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Exit {
+            get {
+                object obj = ResourceManager.GetObject("Exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap FireTank1 {
             get {
                 object obj = ResourceManager.GetObject("FireTank1", resourceCulture);
@@ -249,10 +256,31 @@ namespace Tanks.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Info {
+            get {
+                object obj = ResourceManager.GetObject("Info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Icon MainIcon {
             get {
                 object obj = ResourceManager.GetObject("MainIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NewGame {
+            get {
+                object obj = ResourceManager.GetObject("NewGame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NoSound {
+            get {
+                object obj = ResourceManager.GetObject("NoSound", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -434,6 +462,13 @@ namespace Tanks.Properties {
         internal static System.Drawing.Bitmap Projectile10 {
             get {
                 object obj = ResourceManager.GetObject("Projectile10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SoundOn {
+            get {
+                object obj = ResourceManager.GetObject("SoundOn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

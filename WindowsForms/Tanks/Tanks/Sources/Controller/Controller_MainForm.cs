@@ -95,7 +95,7 @@ namespace Tanks
                     model.Packman.NextDirect_y = 1;
                     break;
 
-                default:
+                case "L":
                     model.Projectile.Direct_x = model.Packman.Direct_x;
                     model.Projectile.Direct_y = model.Packman.Direct_y;
 
@@ -121,6 +121,11 @@ namespace Tanks
                     }
                     break;
             }
+        }
+
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
