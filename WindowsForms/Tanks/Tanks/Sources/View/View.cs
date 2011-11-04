@@ -67,9 +67,9 @@ namespace Tanks
 
         private void DrawTanks(Graphics gr)
         {
-            foreach (Tank t in model.Tanks)
+            for (int i = 0; i < model.Tanks.Count; ++i)
             {
-                gr.DrawImage(t.CurrentImg, new Point(t.X, t.Y));
+                gr.DrawImage(model.Tanks[i].CurrentImg, new Point(model.Tanks[i].X, model.Tanks[i].Y));
             }
         }
 
