@@ -74,33 +74,62 @@ namespace Tanks
             {
                 case 'a':
                 case 'A':
+                case 'ф':
+                case 'Ф':
                     model.Packman.NextDirect_x = -1;
                     model.Packman.NextDirect_y = 0;
                     break;
 
                 case 'd':
                 case 'D':
+                case 'в':
+                case 'В':
                     model.Packman.NextDirect_x = 1;
                     model.Packman.NextDirect_y = 0;
                     break;
 
                 case 'w':
                 case 'W':
+                case 'ц':
+                case 'Ц':
                     model.Packman.NextDirect_x = 0;
                     model.Packman.NextDirect_y = -1;
                     break;
 
                 case 's':
                 case 'S':
+                case 'ы':
+                case 'Ы':
+                case 'і':
+                case 'І':
                     model.Packman.NextDirect_x = 0;
                     model.Packman.NextDirect_y = 1;
                     break;
 
                 default:
-                    model.Projectile.X = model.Packman.X;
-                    model.Projectile.Y = model.Packman.Y;
                     model.Projectile.Direct_x = model.Packman.Direct_x;
                     model.Projectile.Direct_y = model.Packman.Direct_y;
+
+                    if (model.Packman.Direct_y == -1)
+                    {
+                        model.Projectile.X = model.Packman.X + 10;
+                        model.Projectile.Y = model.Packman.Y;
+                    }
+                    if (model.Packman.Direct_y == 1)
+                    {
+                        model.Projectile.X = model.Packman.X + 10;
+                        model.Projectile.Y = model.Packman.Y + 20;
+                    }
+                    if (model.Packman.Direct_x == -1)
+                    {
+                        model.Projectile.X = model.Packman.X;
+                        model.Projectile.Y = model.Packman.Y + 10;
+                    }
+                    if (model.Packman.Direct_x == 1)
+                    {
+                        model.Projectile.X = model.Packman.X + 20;
+                        model.Projectile.Y = model.Packman.Y + 10;
+                    }
                     break;
             }
         }
