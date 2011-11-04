@@ -159,10 +159,12 @@ namespace Tanks
                 }
 
                 for (int i = 1; i < tanks.Count; i++)
-                    if (Math.Abs(tanks[i].X - projectile.X) < 11 && Math.Abs(tanks[i].Y - projectile.Y) < 11)
+                    if ((projectile.X - tanks[i].X) < 13 && (projectile.Y - tanks[i].Y) < 13 &&
+                        (projectile.X - tanks[i].X) > 7 && (projectile.Y - tanks[i].Y) > 7)
                     {
                         fireTanks.Add(new FireTank(tanks[i].X, tanks[i].Y));
                         tanks.RemoveAt(i);
+                        projectile.DefaultSettings();
                     }
 
                     for (int i = 0; i < tanks.Count - 1; i++)

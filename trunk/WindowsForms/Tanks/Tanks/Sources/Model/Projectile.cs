@@ -10,6 +10,7 @@ namespace Tanks
     {
         private ProjectileImg projectileImg = new ProjectileImg();
         Image img;
+        private int km;
 
         public Image Img
         {
@@ -20,11 +21,16 @@ namespace Tanks
 
         public Projectile()
         {
+            img = projectileImg.Up;
+            DefaultSettings();
+        }
+
+        public void DefaultSettings()
+        {
             x = y = -10;
             Direct_x = 0;
-            Direct_y = -1;
-
-            PutImg();
+            Direct_y = 0;
+            km = 0;
         }
 
         public int Y
@@ -66,9 +72,17 @@ namespace Tanks
 
         public void Run()
         {
-            x += Direct_x * 2;
-            y += Direct_y * 2;
+            if (Direct_x == 0 && Direct_y == 0)
+                return;
+
+            km += 3;
             PutImg();
+            x += Direct_x * 3;
+            y += Direct_y * 3;
+            if (km > 140)
+            {
+                DefaultSettings();
+            }
         }
     }
 }
