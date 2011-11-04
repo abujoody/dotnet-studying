@@ -8,7 +8,7 @@ namespace Tanks
     class Hunter : Tank
     {
         HunterImg hunterImg = new HunterImg();
-        protected override void PutImg()
+        void PutImg()
         {
             if (direct_x == 1)
                 img = hunterImg.Right;
@@ -26,7 +26,7 @@ namespace Tanks
         {
             Direct_y = -1;
             Direct_x = 0;
-            PutImg();
+            img = hunterImg.Up;
             PutCurrentImage();
         }
 

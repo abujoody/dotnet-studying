@@ -61,7 +61,6 @@ namespace Tanks
             this.y = 240;
             this.Direct_x = 0;
             this.Direct_y = -1;
-            this.nextDirect_x = 0;
             this.nextDirect_y = -1;
 
             PutImg();
