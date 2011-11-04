@@ -36,18 +36,20 @@ namespace Tanks
             this.Controls.Add(view);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void StartStopButton_Click(object sender, EventArgs e)
         {
             if (model.gameStatus == GameStatus.playing)
             {
                 modelPlay.Abort();
                 model.gameStatus = GameStatus.stopping;
+                StartStopButton.Image = Properties.Resources.PlayButton;
             }
             else
             {
                 modelPlay = new Thread(model.Play);
                 modelPlay.Start();
                 model.gameStatus = GameStatus.playing;
+                StartStopButton.Image = Properties.Resources.PauseButton;
 
                 view.Invalidate();
             }

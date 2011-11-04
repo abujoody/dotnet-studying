@@ -167,6 +167,8 @@
     <None Include="Resources\ProjectileImage\Projectile01.bmp" />
     <None Include="Resources\ProjectileImage\Projectile10.bmp" />
     <None Include="Resources\ProjectileImage\Projectile_10.bmp" />
+    <None Include="Resources\PauseButton.gif" />
+    <None Include="Resources\PlayButton.gif" />
     <Content Include="Resources\TanksDirections\DOWN\TankImg01.bmp" />
     <Content Include="Resources\TanksDirections\DOWN\TankImg01I.bmp" />
     <Content Include="Resources\TanksDirections\DOWN\TankImg01II.bmp" />
