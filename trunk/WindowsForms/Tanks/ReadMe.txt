@@ -5,3 +5,8 @@ In future i'll try to refactor it (especially in redrawing mechanism
 part) if author didn't propose another way (Im only on 12 from 55
 lesson now). And this is only my opinion about this project (what if
 you like it ?... :) ).
+
+Now Project is Finished (My implementation is not strictly the same as
+in tutorial - some experiments took place). Some bugs are represented.
+
+!!! Further improvement most likely will not be supported.  
