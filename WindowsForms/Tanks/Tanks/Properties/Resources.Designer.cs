@@ -613,6 +613,12 @@ namespace Tanks.Properties {
             }
         }
         
+        internal static System.IO.UnmanagedMemoryStream TankMov {
+            get {
+                return ResourceManager.GetStream("TankMov", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap Wall {
             get {
                 object obj = ResourceManager.GetObject("Wall", resourceCulture);

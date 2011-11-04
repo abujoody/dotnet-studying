@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace Tanks
 {
@@ -24,6 +25,8 @@ namespace Tanks
 
         bool isSound;
 
+        SoundPlayer sp;
+
         public Controller_MainForm() : this(defSizeField) {}
         public Controller_MainForm(int sizeField) : this(sizeField, defAmountTanks) {}
         public Controller_MainForm(int sizeField, int amountTanks) : this(sizeField, amountTanks, defAmountApples) {}
@@ -39,6 +42,8 @@ namespace Tanks
             this.Controls.Add(view);
 
             isSound = true;
+
+            sp = new SoundPlayer(Properties.Resources.TankMov);
         }
 
         private void StartStopButton_Click(object sender, EventArgs e)
@@ -151,9 +156,16 @@ namespace Tanks
         {
             isSound = !isSound;
             if (isSound)
+            {
+                if (model.gameStatus == GameStatus.playing)
+                    sp.PlayLooping();
                 soundToolStripMenuItem.Image = Properties.Resources.SoundOn;
+            }
             else
+            {
+                sp.Stop();
                 soundToolStripMenuItem.Image = Properties.Resources.NoSound;
+            }
         }
 
         void ChangerStatusStripLbl()
@@ -164,6 +176,17 @@ namespace Tanks
         void SafeChangerStatusStripLbl()
         {
             GameStatus_lbl_ststr.Text = model.gameStatus.ToString();
+            if (isSound)
+            {
+                if (model.gameStatus == GameStatus.playing)
+                {
+                    sp.PlayLooping();
+                }
+                else
+                {
+                    sp.Stop();
+                }
+            }
         }
     }
 }
