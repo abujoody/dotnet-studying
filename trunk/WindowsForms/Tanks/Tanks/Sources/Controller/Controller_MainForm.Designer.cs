@@ -46,6 +46,7 @@
             this.StartStopButton.TabStop = false;
             this.Help_Ttip.SetToolTip(this.StartStopButton, "Click Button To Start Game");
             this.StartStopButton.Click += new System.EventHandler(this.StartStopButton_Click);
+            this.StartStopButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.StartStopButton_PreviewKeyDown);
             // 
             // Help_Ttip
             // 

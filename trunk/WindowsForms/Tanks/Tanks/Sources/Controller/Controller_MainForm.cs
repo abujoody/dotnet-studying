@@ -46,6 +46,7 @@ namespace Tanks
             }
             else
             {
+                StartStopButton.Focus();
                 modelPlay = new Thread(model.Play);
                 modelPlay.Start();
                 model.gameStatus = GameStatus.playing;
@@ -70,40 +71,26 @@ namespace Tanks
                 e.Cancel = true;
         }
 
-        private void ManipulatePackman(object sender, KeyPressEventArgs e)
+        private void StartStopButton_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            switch (e.KeyChar)
+            switch (e.KeyData.ToString())
             {
-                case 'a':
-                case 'A':
-                case 'ф':
-                case 'Ф':
+                case "A":
                     model.Packman.NextDirect_x = -1;
                     model.Packman.NextDirect_y = 0;
                     break;
 
-                case 'd':
-                case 'D':
-                case 'в':
-                case 'В':
+                case "D":
                     model.Packman.NextDirect_x = 1;
                     model.Packman.NextDirect_y = 0;
                     break;
 
-                case 'w':
-                case 'W':
-                case 'ц':
-                case 'Ц':
+                case "W":
                     model.Packman.NextDirect_x = 0;
                     model.Packman.NextDirect_y = -1;
                     break;
 
-                case 's':
-                case 'S':
-                case 'ы':
-                case 'Ы':
-                case 'і':
-                case 'І':
+                case "S":
                     model.Packman.NextDirect_x = 0;
                     model.Packman.NextDirect_y = 1;
                     break;
