@@ -31,8 +31,9 @@ namespace Tanks
         public Controller_MainForm(int sizeField, int amountTanks, int amountApples, int speedGame)
         {
             InitializeComponent();
-
             model = new Model(sizeField, amountTanks, amountApples, speedGame);
+
+            model.changeStreep += new STREEP(ChangerStatusStripLbl);
 
             view = new View(model);
             this.Controls.Add(view);
@@ -47,6 +48,7 @@ namespace Tanks
                 modelPlay.Abort();
                 model.gameStatus = GameStatus.stopping;
                 StartStopButton.Image = Properties.Resources.PlayButton;
+                ChangerStatusStripLbl();
             }
             else
             {
@@ -55,6 +57,7 @@ namespace Tanks
                 modelPlay.Start();
                 model.gameStatus = GameStatus.playing;
                 StartStopButton.Image = Properties.Resources.PauseButton;
+                ChangerStatusStripLbl();
 
                 view.Invalidate();
             }
@@ -151,6 +154,11 @@ namespace Tanks
                 soundToolStripMenuItem.Image = Properties.Resources.SoundOn;
             else
                 soundToolStripMenuItem.Image = Properties.Resources.NoSound;
+        }
+
+        void ChangerStatusStripLbl()
+        {
+            GameStatus_lbl_ststr.Text = model.gameStatus.ToString();
         }
     }
 }

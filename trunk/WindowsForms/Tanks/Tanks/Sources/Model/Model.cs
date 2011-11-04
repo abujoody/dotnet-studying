@@ -6,8 +6,11 @@ using System.Threading;
 
 namespace Tanks
 {
+    public delegate void STREEP();
     class Model
     {
+        public event STREEP changeStreep;
+
         int collectedApples;
         int sizeField;
         int amountTanks;
@@ -187,6 +190,10 @@ namespace Tanks
                         )
                     {
                         gameStatus = GameStatus.looser;
+                        if (changeStreep != null)
+                        {
+                            changeStreep();
+                        }
                     }
                 }
 
@@ -201,15 +208,21 @@ namespace Tanks
                 }
 
                 if (collectedApples > 4)
+                {
                     gameStatus = GameStatus.winner;
+                    if (changeStreep != null)
+                    {
+                        changeStreep();
+                    }
+                }
             }
         }
 
-        int step = -30;
-
+        int step;
         internal void NewGame()
         {
             collectedApples = 0;
+            step = -30;
 
             tanks = new List<Tank>();
             fireTanks = new List<FireTank>();
