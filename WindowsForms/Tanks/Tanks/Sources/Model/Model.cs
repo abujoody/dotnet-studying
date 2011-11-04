@@ -6,10 +6,10 @@ using System.Threading;
 
 namespace Tanks
 {
-    public delegate void STREEP();
+    public delegate void Streep();
     class Model
     {
-        public event STREEP changeStreep;
+        public event Streep changeStreep;
 
         int collectedApples;
         int sizeField;
@@ -38,7 +38,6 @@ namespace Tanks
         internal List<FireTank> FireTanks
         {
             get { return fireTanks; }
-            set { fireTanks = value; }
         }
 
         internal List<Apple> Apples
@@ -49,13 +48,11 @@ namespace Tanks
         internal Packman Packman
         {
             get { return packman; }
-            set { packman = value; }
         }
 
         internal Projectile Projectile
         {
             get { return projectile; }
-            set { projectile = value; }
         }
 
         public Model(int sizeField, int amountTanks, int amountApples, int speedGame)

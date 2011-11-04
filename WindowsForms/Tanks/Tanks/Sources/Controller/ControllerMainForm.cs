@@ -9,9 +9,10 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Media;
 
+[assembly: CLSCompliant(true)]
 namespace Tanks
 {
-    public partial class Controller_MainForm : Form
+    public partial class ControllerMainForm : Form
     {
         const int defSizeField = 260;
         const int defAmountTanks = 5;
@@ -27,16 +28,16 @@ namespace Tanks
 
         SoundPlayer sp;
 
-        public Controller_MainForm() : this(defSizeField) {}
-        public Controller_MainForm(int sizeField) : this(sizeField, defAmountTanks) {}
-        public Controller_MainForm(int sizeField, int amountTanks) : this(sizeField, amountTanks, defAmountApples) {}
-        public Controller_MainForm(int sizeField, int amountTanks, int amountApples) : this(sizeField, amountTanks, amountApples, defSpeedGame) {}
-        public Controller_MainForm(int sizeField, int amountTanks, int amountApples, int speedGame)
+        public ControllerMainForm() : this(defSizeField) {}
+        public ControllerMainForm(int sizeField) : this(sizeField, defAmountTanks) {}
+        public ControllerMainForm(int sizeField, int amountTanks) : this(sizeField, amountTanks, defAmountApples) {}
+        public ControllerMainForm(int sizeField, int amountTanks, int amountApples) : this(sizeField, amountTanks, amountApples, defSpeedGame) {}
+        public ControllerMainForm(int sizeField, int amountTanks, int amountApples, int speedGame)
         {
             InitializeComponent();
             model = new Model(sizeField, amountTanks, amountApples, speedGame);
 
-            model.changeStreep += new STREEP(ChangerStatusStripLbl);
+            model.changeStreep += new Streep(ChangerStatusStripLbl);
 
             view = new View(model);
             this.Controls.Add(view);
@@ -70,17 +71,22 @@ namespace Tanks
 
         private void Controller_MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            sp.Stop();
+
             if (modelPlay != null)
             {
                 model.gameStatus = GameStatus.stopping;
                 modelPlay.Abort();
             }
 
-            DialogResult dr = MessageBox.Show("Are you sure you want close application?", this.Text, MessageBoxButtons.YesNoCancel);
+            DialogResult dr = MessageBox.Show("Are you sure you want close application?", this.Text, MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2, MessageBoxOptions.DefaultDesktopOnly);
             if (dr == DialogResult.Yes)
                 e.Cancel = false;
             else
+            {
                 e.Cancel = true;
+            }
         }
 
         private void StartStopButton_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -149,7 +155,8 @@ namespace Tanks
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Game Tanks (Packman) v1.0\nUse W, S, A, D to move and L to shoot.\nGather 5 apples to win.", "Tanks");
+            MessageBox.Show("Game Tanks (Packman) v1.0\nUse W, S, A, D to move and L to shoot.\nGather 5 apples to win.", "Tanks", MessageBoxButtons.OK,
+                MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2, MessageBoxOptions.DefaultDesktopOnly);
         }
 
         private void SoundToolStripMenuItem_Click(object sender, EventArgs e)

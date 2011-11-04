@@ -10,7 +10,7 @@ namespace Tanks
     {
         private TankImg tankImg = new TankImg();
 
-        protected virtual void PutImg()
+        private void PutImg()
         {
             if (direct_x == 1)
                 img = tankImg.Right;

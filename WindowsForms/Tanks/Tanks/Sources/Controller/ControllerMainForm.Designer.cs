@@ -1,6 +1,6 @@
 ﻿namespace Tanks
 {
-    partial class Controller_MainForm
+    partial class ControllerMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Controller_MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControllerMainForm));
             this.StartStopButton = new System.Windows.Forms.PictureBox();
             this.Help_Ttip = new System.Windows.Forms.ToolTip(this.components);
-            this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,7 +44,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.GameStatus_lbl_ststr = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.StartStopButton)).BeginInit();
-            this.MainMenuStrip.SuspendLayout();
+            this.MainMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,17 +69,17 @@
             // 
             // MainMenuStrip
             // 
-            this.MainMenuStrip.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainMenu.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.infoToolStripMenuItem});
-            this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.MainMenuStrip.Name = "MainMenuStrip";
-            this.MainMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.MainMenuStrip.Size = new System.Drawing.Size(374, 24);
-            this.MainMenuStrip.TabIndex = 1;
-            this.MainMenuStrip.Text = "menuStrip1";
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenuStrip";
+            this.MainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.MainMenu.Size = new System.Drawing.Size(374, 24);
+            this.MainMenu.TabIndex = 1;
+            this.MainMenu.Text = "menuStrip1";
             // 
             // gameToolStripMenuItem
             // 
@@ -169,7 +169,7 @@
             this.ClientSize = new System.Drawing.Size(374, 372);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.StartStopButton);
-            this.Controls.Add(this.MainMenuStrip);
+            this.Controls.Add(this.MainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -177,8 +177,8 @@
             this.Text = "Танки";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Controller_MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.StartStopButton)).EndInit();
-            this.MainMenuStrip.ResumeLayout(false);
-            this.MainMenuStrip.PerformLayout();
+            this.MainMenu.ResumeLayout(false);
+            this.MainMenu.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -190,7 +190,7 @@
 
         private System.Windows.Forms.PictureBox StartStopButton;
         private System.Windows.Forms.ToolTip Help_Ttip;
-        private System.Windows.Forms.MenuStrip MainMenuStrip;
+        private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
