@@ -59,22 +59,12 @@ namespace Tanks
         {
             r = new Random();
 
-            tanks = new List<Tank>();
-            fireTanks = new List<FireTank>();
-            apples = new List<Apple>();
-
             this.sizeField = sizeField;
             this.amountTanks = amountTanks;
             this.amountApples = amountApples;
             this.speedGame = speedGame;
 
-            CreateTanks();
-            CreateApples();
-            wall = new Wall();
-            packman = new Packman(sizeField);
-            projectile = new Projectile(); 
-
-            gameStatus = GameStatus.stopping;
+            NewGame();
         }
 
         private void CreateApples()
@@ -216,5 +206,22 @@ namespace Tanks
         }
 
         int step = -30;
+
+        internal void NewGame()
+        {
+            collectedApples = 0;
+
+            tanks = new List<Tank>();
+            fireTanks = new List<FireTank>();
+            apples = new List<Apple>();
+
+            CreateTanks();
+            CreateApples();
+            wall = new Wall();
+            packman = new Packman(sizeField);
+            projectile = new Projectile();
+
+            gameStatus = GameStatus.stopping;
+        }
     }
 }
