@@ -354,6 +354,34 @@ namespace Tanks.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Projectile_10 {
+            get {
+                object obj = ResourceManager.GetObject("Projectile_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Projectile0_1 {
+            get {
+                object obj = ResourceManager.GetObject("Projectile0_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Projectile01 {
+            get {
+                object obj = ResourceManager.GetObject("Projectile01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Projectile10 {
+            get {
+                object obj = ResourceManager.GetObject("Projectile10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TankImg_10 {
             get {
                 object obj = ResourceManager.GetObject("TankImg_10", resourceCulture);
