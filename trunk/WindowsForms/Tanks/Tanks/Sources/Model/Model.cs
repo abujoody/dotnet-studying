@@ -19,6 +19,7 @@ namespace Tanks
         static Random r;
 
         Packman packman;
+        Projectile projectile;
 
         List<Tank> tanks;
         List<Apple> apples;
@@ -41,6 +42,12 @@ namespace Tanks
             set { packman = value; }
         }
 
+        internal Projectile Projectile
+        {
+            get { return projectile; }
+            set { projectile = value; }
+        }
+
         public Model(int sizeField, int amountTanks, int amountApples, int speedGame)
         {
             r = new Random();
@@ -57,6 +64,7 @@ namespace Tanks
             CreateApples();
             wall = new Wall();
             packman = new Packman(sizeField);
+            projectile = new Projectile(); 
 
             gameStatus = GameStatus.stopping;
         }
@@ -129,6 +137,7 @@ namespace Tanks
             {
                 Thread.Sleep(speedGame);
 
+                projectile.Run();
                 packman.Run();
                 ((Hunter)tanks[0]).Run(packman.X, packman.Y);
                 for (int i = 1; i < tanks.Count; i++)

@@ -13,7 +13,7 @@ namespace Tanks
     public partial class Controller_MainForm : Form
     {
         const int defSizeField = 260;
-        const int defAmountTanks = 5;
+        const int defAmountTanks = 2;
         const int defAmountApples = 5;
         const int defSpeedGame = 40;
 
@@ -97,6 +97,10 @@ namespace Tanks
                     break;
 
                 default:
+                    model.Projectile.X = model.Packman.X;
+                    model.Projectile.Y = model.Packman.Y;
+                    model.Projectile.Direct_x = model.Packman.Direct_x;
+                    model.Projectile.Direct_y = model.Packman.Direct_y;
                     break;
             }
         }

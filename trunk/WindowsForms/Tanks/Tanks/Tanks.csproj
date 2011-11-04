@@ -68,6 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\Model\Packman.cs" />
     <Compile Include="Sources\Model\PackmanImg.cs" />
+    <Compile Include="Sources\Model\Projectile.cs" />
+    <Compile Include="Sources\Model\ProjectileImg.cs" />
     <Compile Include="Sources\Model\Tank.cs" />
     <Compile Include="Sources\Model\TankImg.cs" />
     <Compile Include="Sources\View\View.cs">
@@ -153,6 +155,10 @@
     <Content Include="Resources\PackmanDirections\UP\PackmanImg0_1II.bmp" />
     <Content Include="Resources\PackmanDirections\UP\PackmanImg0_1III.bmp" />
     <Content Include="Resources\PackmanDirections\UP\PackmanImg0_1IV.bmp" />
+    <None Include="Resources\ProjectileImage\Projectile0_1.bmp" />
+    <None Include="Resources\ProjectileImage\Projectile01.bmp" />
+    <None Include="Resources\ProjectileImage\Projectile10.bmp" />
+    <None Include="Resources\ProjectileImage\Projectile_10.bmp" />
     <Content Include="Resources\TanksDirections\DOWN\TankImg01.bmp" />
     <Content Include="Resources\TanksDirections\DOWN\TankImg01I.bmp" />
     <Content Include="Resources\TanksDirections\DOWN\TankImg01II.bmp" />
