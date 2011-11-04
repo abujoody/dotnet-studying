@@ -143,6 +143,11 @@
     <None Include="Resources\FireTank\FireTank4.bmp" />
     <None Include="Resources\FireTank\FireTank5.bmp" />
     <None Include="Resources\FireTank\FireTank6.bmp" />
+    <None Include="Resources\MenuIcons\Exit.png" />
+    <None Include="Resources\MenuIcons\Info.png" />
+    <None Include="Resources\MenuIcons\NewGame.png" />
+    <None Include="Resources\MenuIcons\NoSound.png" />
+    <None Include="Resources\MenuIcons\SoundOn.png" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01I.bmp" />
     <Content Include="Resources\PackmanDirections\Down\PackmanImg01II.bmp" />

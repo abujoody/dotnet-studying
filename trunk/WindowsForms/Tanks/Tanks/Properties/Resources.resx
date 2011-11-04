@@ -121,6 +121,9 @@
   <data name="Apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\apple.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuIcons\Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FireTank1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FireTank\FireTank1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,8 +202,17 @@
   <data name="HunterImg_10IV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HunterDirections\LEFT\HunterImg_10IV.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuIcons\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MainIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuIcons\NewGame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuIcons\NoSound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PackmanImg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\packmandirections\down\packmanimg01.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -279,6 +291,9 @@
   </data>
   <data name="Projectile_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProjectileImage\Projectile_10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoundOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuIcons\SoundOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TankImg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TanksDirections\DOWN\TankImg01.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
