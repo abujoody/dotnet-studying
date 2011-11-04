@@ -13,7 +13,7 @@ namespace Tanks
     public partial class Controller_MainForm : Form
     {
         const int defSizeField = 260;
-        const int defAmountTanks = 2;
+        const int defAmountTanks = 5;
         const int defAmountApples = 5;
         const int defSpeedGame = 40;
 
@@ -21,6 +21,8 @@ namespace Tanks
         Model model;
 
         Thread modelPlay;
+
+        bool isSound;
 
         public Controller_MainForm() : this(defSizeField) {}
         public Controller_MainForm(int sizeField) : this(sizeField, defAmountTanks) {}
@@ -34,6 +36,8 @@ namespace Tanks
 
             view = new View(model);
             this.Controls.Add(view);
+
+            isSound = true;
         }
 
         private void StartStopButton_Click(object sender, EventArgs e)
@@ -126,6 +130,27 @@ namespace Tanks
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void NewGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model.NewGame();
+            StartStopButton.Image = Properties.Resources.PlayButton;
+            view.Refresh();
+        }
+
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Game Tanks (Packman) v1.0\nUse W, S, A, D to move and L to shoot.\nGather 5 apples to win.", "Tanks");
+        }
+
+        private void SoundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            isSound = !isSound;
+            if (isSound)
+                soundToolStripMenuItem.Image = Properties.Resources.SoundOn;
+            else
+                soundToolStripMenuItem.Image = Properties.Resources.NoSound;
         }
     }
 }
