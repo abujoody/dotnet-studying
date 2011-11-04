@@ -158,6 +158,11 @@ namespace Tanks
 
         void ChangerStatusStripLbl()
         {
+            Invoke(new MethodInvoker(SafeChangerStatusStripLbl));
+        }
+
+        void SafeChangerStatusStripLbl()
+        {
             GameStatus_lbl_ststr.Text = model.gameStatus.ToString();
         }
     }
