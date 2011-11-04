@@ -140,7 +140,8 @@ namespace Tanks
 
                 projectile.Run();
                 packman.Run();
-                ((Hunter)tanks[0]).Run(packman.X, packman.Y);
+                if (tanks.Count > 0)
+                    ((Hunter)tanks[0]).Run(packman.X, packman.Y);
                 for (int i = 1; i < tanks.Count; i++)
                 {
                     tanks[i].Run();
