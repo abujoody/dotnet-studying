@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.grbx_Debitors = new System.Windows.Forms.GroupBox();
-            this.grbx_DebitorDetails = new System.Windows.Forms.GroupBox();
-            this.grbx_Credits = new System.Windows.Forms.GroupBox();
-            this.grbx_Payments = new System.Windows.Forms.GroupBox();
             this.dgv_Debitors = new System.Windows.Forms.DataGridView();
-            this.dgv_Credits = new System.Windows.Forms.DataGridView();
-            this.dgv_Payments = new System.Windows.Forms.DataGridView();
-            this.txbx_DebitorID = new System.Windows.Forms.TextBox();
-            this.txbx_DebitorName = new System.Windows.Forms.TextBox();
-            this.txbx_DebitorPostNumber = new System.Windows.Forms.TextBox();
-            this.txbx_PhoneNumber = new System.Windows.Forms.TextBox();
-            this.lbl_DebitorID = new System.Windows.Forms.Label();
-            this.lbl_DebitorName = new System.Windows.Forms.Label();
-            this.lbl_DebitorPostNumber = new System.Windows.Forms.Label();
+            this.grbx_DebitorDetails = new System.Windows.Forms.GroupBox();
             this.lbl_DebitorPhoneNumber = new System.Windows.Forms.Label();
+            this.lbl_DebitorPostNumber = new System.Windows.Forms.Label();
+            this.lbl_DebitorName = new System.Windows.Forms.Label();
+            this.lbl_DebitorID = new System.Windows.Forms.Label();
+            this.txbx_PhoneNumber = new System.Windows.Forms.TextBox();
+            this.txbx_DebitorPostNumber = new System.Windows.Forms.TextBox();
+            this.txbx_DebitorName = new System.Windows.Forms.TextBox();
+            this.txbx_DebitorID = new System.Windows.Forms.TextBox();
+            this.grbx_Credits = new System.Windows.Forms.GroupBox();
+            this.dgv_Credits = new System.Windows.Forms.DataGridView();
+            this.grbx_Payments = new System.Windows.Forms.GroupBox();
+            this.dgv_Payments = new System.Windows.Forms.DataGridView();
             this.grbx_Search = new System.Windows.Forms.GroupBox();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,11 +55,11 @@
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passNewPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbx_Debitors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Debitors)).BeginInit();
             this.grbx_DebitorDetails.SuspendLayout();
             this.grbx_Credits.SuspendLayout();
-            this.grbx_Payments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Debitors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Credits)).BeginInit();
+            this.grbx_Payments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Payments)).BeginInit();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,17 @@
             this.grbx_Debitors.TabIndex = 0;
             this.grbx_Debitors.TabStop = false;
             this.grbx_Debitors.Text = "Debitors";
+            // 
+            // dgv_Debitors
+            // 
+            this.dgv_Debitors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Debitors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_Debitors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Debitors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Debitors.Location = new System.Drawing.Point(3, 16);
+            this.dgv_Debitors.Name = "dgv_Debitors";
+            this.dgv_Debitors.Size = new System.Drawing.Size(345, 110);
+            this.dgv_Debitors.TabIndex = 0;
             // 
             // grbx_DebitorDetails
             // 
@@ -91,6 +102,78 @@
             this.grbx_DebitorDetails.TabStop = false;
             this.grbx_DebitorDetails.Text = "Debitor Details";
             // 
+            // lbl_DebitorPhoneNumber
+            // 
+            this.lbl_DebitorPhoneNumber.AutoSize = true;
+            this.lbl_DebitorPhoneNumber.Location = new System.Drawing.Point(6, 100);
+            this.lbl_DebitorPhoneNumber.Name = "lbl_DebitorPhoneNumber";
+            this.lbl_DebitorPhoneNumber.Size = new System.Drawing.Size(115, 13);
+            this.lbl_DebitorPhoneNumber.TabIndex = 7;
+            this.lbl_DebitorPhoneNumber.Text = "Debitor Phone Number";
+            // 
+            // lbl_DebitorPostNumber
+            // 
+            this.lbl_DebitorPostNumber.AutoSize = true;
+            this.lbl_DebitorPostNumber.Location = new System.Drawing.Point(6, 74);
+            this.lbl_DebitorPostNumber.Name = "lbl_DebitorPostNumber";
+            this.lbl_DebitorPostNumber.Size = new System.Drawing.Size(105, 13);
+            this.lbl_DebitorPostNumber.TabIndex = 6;
+            this.lbl_DebitorPostNumber.Text = "Debitor Post Number";
+            // 
+            // lbl_DebitorName
+            // 
+            this.lbl_DebitorName.AutoSize = true;
+            this.lbl_DebitorName.Location = new System.Drawing.Point(6, 48);
+            this.lbl_DebitorName.Name = "lbl_DebitorName";
+            this.lbl_DebitorName.Size = new System.Drawing.Size(72, 13);
+            this.lbl_DebitorName.TabIndex = 5;
+            this.lbl_DebitorName.Text = "Debitor Name";
+            // 
+            // lbl_DebitorID
+            // 
+            this.lbl_DebitorID.AutoSize = true;
+            this.lbl_DebitorID.Location = new System.Drawing.Point(6, 22);
+            this.lbl_DebitorID.Name = "lbl_DebitorID";
+            this.lbl_DebitorID.Size = new System.Drawing.Size(55, 13);
+            this.lbl_DebitorID.TabIndex = 4;
+            this.lbl_DebitorID.Text = "Debitor ID";
+            // 
+            // txbx_PhoneNumber
+            // 
+            this.txbx_PhoneNumber.BackColor = System.Drawing.SystemColors.Info;
+            this.txbx_PhoneNumber.Location = new System.Drawing.Point(127, 97);
+            this.txbx_PhoneNumber.Name = "txbx_PhoneNumber";
+            this.txbx_PhoneNumber.ReadOnly = true;
+            this.txbx_PhoneNumber.Size = new System.Drawing.Size(222, 20);
+            this.txbx_PhoneNumber.TabIndex = 3;
+            // 
+            // txbx_DebitorPostNumber
+            // 
+            this.txbx_DebitorPostNumber.BackColor = System.Drawing.SystemColors.Info;
+            this.txbx_DebitorPostNumber.Location = new System.Drawing.Point(127, 71);
+            this.txbx_DebitorPostNumber.Name = "txbx_DebitorPostNumber";
+            this.txbx_DebitorPostNumber.ReadOnly = true;
+            this.txbx_DebitorPostNumber.Size = new System.Drawing.Size(222, 20);
+            this.txbx_DebitorPostNumber.TabIndex = 2;
+            // 
+            // txbx_DebitorName
+            // 
+            this.txbx_DebitorName.BackColor = System.Drawing.SystemColors.Info;
+            this.txbx_DebitorName.Location = new System.Drawing.Point(127, 45);
+            this.txbx_DebitorName.Name = "txbx_DebitorName";
+            this.txbx_DebitorName.ReadOnly = true;
+            this.txbx_DebitorName.Size = new System.Drawing.Size(222, 20);
+            this.txbx_DebitorName.TabIndex = 1;
+            // 
+            // txbx_DebitorID
+            // 
+            this.txbx_DebitorID.BackColor = System.Drawing.SystemColors.Info;
+            this.txbx_DebitorID.Location = new System.Drawing.Point(127, 19);
+            this.txbx_DebitorID.Name = "txbx_DebitorID";
+            this.txbx_DebitorID.ReadOnly = true;
+            this.txbx_DebitorID.Size = new System.Drawing.Size(222, 20);
+            this.txbx_DebitorID.TabIndex = 0;
+            // 
             // grbx_Credits
             // 
             this.grbx_Credits.Controls.Add(this.dgv_Credits);
@@ -100,6 +183,15 @@
             this.grbx_Credits.TabIndex = 2;
             this.grbx_Credits.TabStop = false;
             this.grbx_Credits.Text = "Credits";
+            // 
+            // dgv_Credits
+            // 
+            this.dgv_Credits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Credits.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Credits.Location = new System.Drawing.Point(3, 16);
+            this.dgv_Credits.Name = "dgv_Credits";
+            this.dgv_Credits.Size = new System.Drawing.Size(710, 145);
+            this.dgv_Credits.TabIndex = 0;
             // 
             // grbx_Payments
             // 
@@ -111,24 +203,6 @@
             this.grbx_Payments.TabStop = false;
             this.grbx_Payments.Text = "Payments";
             // 
-            // dgv_Debitors
-            // 
-            this.dgv_Debitors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Debitors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Debitors.Location = new System.Drawing.Point(3, 16);
-            this.dgv_Debitors.Name = "dgv_Debitors";
-            this.dgv_Debitors.Size = new System.Drawing.Size(345, 110);
-            this.dgv_Debitors.TabIndex = 0;
-            // 
-            // dgv_Credits
-            // 
-            this.dgv_Credits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Credits.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Credits.Location = new System.Drawing.Point(3, 16);
-            this.dgv_Credits.Name = "dgv_Credits";
-            this.dgv_Credits.Size = new System.Drawing.Size(710, 145);
-            this.dgv_Credits.TabIndex = 0;
-            // 
             // dgv_Payments
             // 
             this.dgv_Payments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -137,78 +211,6 @@
             this.dgv_Payments.Name = "dgv_Payments";
             this.dgv_Payments.Size = new System.Drawing.Size(710, 145);
             this.dgv_Payments.TabIndex = 0;
-            // 
-            // txbx_DebitorID
-            // 
-            this.txbx_DebitorID.BackColor = System.Drawing.SystemColors.Info;
-            this.txbx_DebitorID.Location = new System.Drawing.Point(127, 19);
-            this.txbx_DebitorID.Name = "txbx_DebitorID";
-            this.txbx_DebitorID.ReadOnly = true;
-            this.txbx_DebitorID.Size = new System.Drawing.Size(222, 20);
-            this.txbx_DebitorID.TabIndex = 0;
-            // 
-            // txbx_DebitorName
-            // 
-            this.txbx_DebitorName.BackColor = System.Drawing.SystemColors.Info;
-            this.txbx_DebitorName.Location = new System.Drawing.Point(127, 45);
-            this.txbx_DebitorName.Name = "txbx_DebitorName";
-            this.txbx_DebitorName.ReadOnly = true;
-            this.txbx_DebitorName.Size = new System.Drawing.Size(222, 20);
-            this.txbx_DebitorName.TabIndex = 1;
-            // 
-            // txbx_DebitorPostNumber
-            // 
-            this.txbx_DebitorPostNumber.BackColor = System.Drawing.SystemColors.Info;
-            this.txbx_DebitorPostNumber.Location = new System.Drawing.Point(127, 71);
-            this.txbx_DebitorPostNumber.Name = "txbx_DebitorPostNumber";
-            this.txbx_DebitorPostNumber.ReadOnly = true;
-            this.txbx_DebitorPostNumber.Size = new System.Drawing.Size(222, 20);
-            this.txbx_DebitorPostNumber.TabIndex = 2;
-            // 
-            // txbx_PhoneNumber
-            // 
-            this.txbx_PhoneNumber.BackColor = System.Drawing.SystemColors.Info;
-            this.txbx_PhoneNumber.Location = new System.Drawing.Point(127, 97);
-            this.txbx_PhoneNumber.Name = "txbx_PhoneNumber";
-            this.txbx_PhoneNumber.ReadOnly = true;
-            this.txbx_PhoneNumber.Size = new System.Drawing.Size(222, 20);
-            this.txbx_PhoneNumber.TabIndex = 3;
-            // 
-            // lbl_DebitorID
-            // 
-            this.lbl_DebitorID.AutoSize = true;
-            this.lbl_DebitorID.Location = new System.Drawing.Point(6, 22);
-            this.lbl_DebitorID.Name = "lbl_DebitorID";
-            this.lbl_DebitorID.Size = new System.Drawing.Size(55, 13);
-            this.lbl_DebitorID.TabIndex = 4;
-            this.lbl_DebitorID.Text = "Debitor ID";
-            // 
-            // lbl_DebitorName
-            // 
-            this.lbl_DebitorName.AutoSize = true;
-            this.lbl_DebitorName.Location = new System.Drawing.Point(6, 48);
-            this.lbl_DebitorName.Name = "lbl_DebitorName";
-            this.lbl_DebitorName.Size = new System.Drawing.Size(72, 13);
-            this.lbl_DebitorName.TabIndex = 5;
-            this.lbl_DebitorName.Text = "Debitor Name";
-            // 
-            // lbl_DebitorPostNumber
-            // 
-            this.lbl_DebitorPostNumber.AutoSize = true;
-            this.lbl_DebitorPostNumber.Location = new System.Drawing.Point(6, 74);
-            this.lbl_DebitorPostNumber.Name = "lbl_DebitorPostNumber";
-            this.lbl_DebitorPostNumber.Size = new System.Drawing.Size(105, 13);
-            this.lbl_DebitorPostNumber.TabIndex = 6;
-            this.lbl_DebitorPostNumber.Text = "Debitor Post Number";
-            // 
-            // lbl_DebitorPhoneNumber
-            // 
-            this.lbl_DebitorPhoneNumber.AutoSize = true;
-            this.lbl_DebitorPhoneNumber.Location = new System.Drawing.Point(6, 100);
-            this.lbl_DebitorPhoneNumber.Name = "lbl_DebitorPhoneNumber";
-            this.lbl_DebitorPhoneNumber.Size = new System.Drawing.Size(115, 13);
-            this.lbl_DebitorPhoneNumber.TabIndex = 7;
-            this.lbl_DebitorPhoneNumber.Text = "Debitor Phone Number";
             // 
             // grbx_Search
             // 
@@ -310,12 +312,12 @@
             this.Name = "MainForm";
             this.Text = "Bank Manager";
             this.grbx_Debitors.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Debitors)).EndInit();
             this.grbx_DebitorDetails.ResumeLayout(false);
             this.grbx_DebitorDetails.PerformLayout();
             this.grbx_Credits.ResumeLayout(false);
-            this.grbx_Payments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Debitors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Credits)).EndInit();
+            this.grbx_Payments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Payments)).EndInit();
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
