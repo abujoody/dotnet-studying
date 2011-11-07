@@ -20,34 +20,35 @@ namespace BANKretail
             ArrayList allDebitors = new ArrayList();
 
             //Step 1: create connection
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            //Step 2: create encapsulated sql request
-            SqlCommand command = new SqlCommand("SELECT * FROM Debitors", connection);
-
-            //Step 3: open a database connection
-            connection.Open();
-
-            //Step 4: perform request
-            SqlDataReader reader = command.ExecuteReader();
-            
-            //Step 5: extract data
-            if (reader.HasRows)
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                foreach (DbDataRecord dr in reader)
+                //Step 2: create encapsulated sql request
+                SqlCommand command = new SqlCommand("SELECT * FROM Debitors ORDER BY Name", connection);
+
+                try
                 {
-                    allDebitors.Add(dr);
+                    //Step 3: open a database connection
+                    connection.Open();
+
+                    //Step 4: perform request
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //Step 5: extract data
+                    if (reader.HasRows)
+                    {
+                        foreach (DbDataRecord dr in reader)
+                        {
+                            allDebitors.Add(dr);
+                        }
+                    }
+                }
+                catch
+                {
+
                 }
             }
-            else
-            {
-                return null;
-            }
 
-            //Step 6: close connection
-            connection.Close();
-
-            return allDebitors; 
+            return allDebitors;
         }
     }
 }
