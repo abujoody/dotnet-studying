@@ -124,5 +124,34 @@ namespace BANKretail
 
             return allPayments;
         }
+
+        public bool SaveNewDebitor(string ID, string Name,
+            string PostNumber, string PhoneNumber)
+        {
+            bool flagResult = false;
+
+            string query = string.Format("INSERT INTO Debitors " +
+                "([ID], [Name], [PostNumber], [PhoneNumber]) " +
+                "VALUES ('{0}', '{1}', '{2}', '{3}'",
+                ID, Name, PostNumber, (PhoneNumber != String.Empty) ? PhoneNumber : null);
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand com = new SqlCommand(query, con);
+
+                try
+                {
+                    con.Open();
+                    if (com.ExecuteNonQuery() == 1)
+                        flagResult = true;
+                }
+                catch
+                {
+
+                }
+            }
+
+            return flagResult;
+        }
     }
 }

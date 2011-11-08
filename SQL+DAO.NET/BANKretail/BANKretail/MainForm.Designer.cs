@@ -186,6 +186,7 @@
             // 
             // dgv_Credits
             // 
+            this.dgv_Credits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_Credits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Credits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Credits.Location = new System.Drawing.Point(3, 16);
@@ -205,6 +206,7 @@
             // 
             // dgv_Payments
             // 
+            this.dgv_Payments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_Payments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Payments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Payments.Location = new System.Drawing.Point(3, 16);
