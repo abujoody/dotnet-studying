@@ -11,12 +11,12 @@ namespace BANKretail
     //Data Access Layer
     class DAL
     {
+        //Connection params
+        //For sql server authentification we must use uid and pwd fields instead of integrated security 
+        string connectionString = @"Data Source=WIN-Q9KSS3JTNEI\SQLEXPRESS;Initial Catalog=BANK;Integrated Security=true;";
+
         public ArrayList GetAllDebitors()
         {
-            //Connection params
-            //For sql server authentification we must use uid and pwd fields instead of integrated security 
-            string connectionString = @"Data Source=WIN-Q9KSS3JTNEI\SQLEXPRESS;Initial Catalog=BANK;Integrated Security=true;";
-
             ArrayList allDebitors = new ArrayList();
 
             //Step 1: create connection
@@ -49,6 +49,43 @@ namespace BANKretail
             }
 
             return allDebitors;
+        }
+
+        public object GetAllCreditsForDebitor(string debitorID)
+        {
+            ArrayList allCredits = new ArrayList();
+
+            //Step 1: create connection
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //Step 2: create encapsulated sql request
+                string query = String.Format("SELECT * FROM Credits WHERE DebitorID='{0}' ORDER BY OpenDate", debitorID);
+                SqlCommand command = new SqlCommand(query, connection);
+
+                try
+                {
+                    //Step 3: open a database connection
+                    connection.Open();
+
+                    //Step 4: perform request
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //Step 5: extract data
+                    if (reader.HasRows)
+                    {
+                        foreach (DbDataRecord dr in reader)
+                        {
+                            allCredits.Add(dr);
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+            return allCredits;
         }
     }
 }

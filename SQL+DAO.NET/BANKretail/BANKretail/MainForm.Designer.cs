@@ -35,7 +35,7 @@
             this.lbl_DebitorPostNumber = new System.Windows.Forms.Label();
             this.lbl_DebitorName = new System.Windows.Forms.Label();
             this.lbl_DebitorID = new System.Windows.Forms.Label();
-            this.txbx_PhoneNumber = new System.Windows.Forms.TextBox();
+            this.txbx_DebitorPhoneNumber = new System.Windows.Forms.TextBox();
             this.txbx_DebitorPostNumber = new System.Windows.Forms.TextBox();
             this.txbx_DebitorName = new System.Windows.Forms.TextBox();
             this.txbx_DebitorID = new System.Windows.Forms.TextBox();
@@ -84,6 +84,7 @@
             this.dgv_Debitors.Name = "dgv_Debitors";
             this.dgv_Debitors.Size = new System.Drawing.Size(345, 110);
             this.dgv_Debitors.TabIndex = 0;
+            this.dgv_Debitors.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Debitors_CellEnter);
             // 
             // grbx_DebitorDetails
             // 
@@ -91,7 +92,7 @@
             this.grbx_DebitorDetails.Controls.Add(this.lbl_DebitorPostNumber);
             this.grbx_DebitorDetails.Controls.Add(this.lbl_DebitorName);
             this.grbx_DebitorDetails.Controls.Add(this.lbl_DebitorID);
-            this.grbx_DebitorDetails.Controls.Add(this.txbx_PhoneNumber);
+            this.grbx_DebitorDetails.Controls.Add(this.txbx_DebitorPhoneNumber);
             this.grbx_DebitorDetails.Controls.Add(this.txbx_DebitorPostNumber);
             this.grbx_DebitorDetails.Controls.Add(this.txbx_DebitorName);
             this.grbx_DebitorDetails.Controls.Add(this.txbx_DebitorID);
@@ -140,12 +141,12 @@
             // 
             // txbx_PhoneNumber
             // 
-            this.txbx_PhoneNumber.BackColor = System.Drawing.SystemColors.Info;
-            this.txbx_PhoneNumber.Location = new System.Drawing.Point(127, 97);
-            this.txbx_PhoneNumber.Name = "txbx_PhoneNumber";
-            this.txbx_PhoneNumber.ReadOnly = true;
-            this.txbx_PhoneNumber.Size = new System.Drawing.Size(222, 20);
-            this.txbx_PhoneNumber.TabIndex = 3;
+            this.txbx_DebitorPhoneNumber.BackColor = System.Drawing.SystemColors.Info;
+            this.txbx_DebitorPhoneNumber.Location = new System.Drawing.Point(127, 97);
+            this.txbx_DebitorPhoneNumber.Name = "txbx_PhoneNumber";
+            this.txbx_DebitorPhoneNumber.ReadOnly = true;
+            this.txbx_DebitorPhoneNumber.Size = new System.Drawing.Size(222, 20);
+            this.txbx_DebitorPhoneNumber.TabIndex = 3;
             // 
             // txbx_DebitorPostNumber
             // 
@@ -335,7 +336,7 @@
         private System.Windows.Forms.Label lbl_DebitorPostNumber;
         private System.Windows.Forms.Label lbl_DebitorName;
         private System.Windows.Forms.Label lbl_DebitorID;
-        private System.Windows.Forms.TextBox txbx_PhoneNumber;
+        private System.Windows.Forms.TextBox txbx_DebitorPhoneNumber;
         private System.Windows.Forms.TextBox txbx_DebitorPostNumber;
         private System.Windows.Forms.TextBox txbx_DebitorName;
         private System.Windows.Forms.TextBox txbx_DebitorID;
