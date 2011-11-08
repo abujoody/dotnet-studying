@@ -87,5 +87,42 @@ namespace BANKretail
 
             return allCredits;
         }
+
+        public object GetAllPaymentsForCredit(string creditID)
+        {
+            ArrayList allPayments = new ArrayList();
+
+            //Step 1: create connection
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //Step 2: create encapsulated sql request
+                string query = String.Format("SELECT * FROM Payments WHERE CreditID='{0}' ORDER BY PaymentDate DESC", creditID);
+                SqlCommand command = new SqlCommand(query, connection);
+
+                try
+                {
+                    //Step 3: open a database connection
+                    connection.Open();
+
+                    //Step 4: perform request
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //Step 5: extract data
+                    if (reader.HasRows)
+                    {
+                        foreach (DbDataRecord dr in reader)
+                        {
+                            allPayments.Add(dr);
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+            return allPayments;
+        }
     }
 }
