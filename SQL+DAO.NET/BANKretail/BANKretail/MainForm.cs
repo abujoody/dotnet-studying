@@ -76,5 +76,21 @@ namespace BANKretail
         {
             Application.Exit();
         }
+
+        private void addNewDebitorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewDebitorForm newDebitor = new NewDebitorForm();
+
+            DialogResult dr = newDebitor.ShowDialog();
+            if (dr == DialogResult.OK)
+            {                
+                dgv_Debitors.DataSource = dal.GetAllDebitors();
+                MessageBox.Show("New Debitor Has Been Created Successfully", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else if (dr == DialogResult.Abort)
+            {
+                MessageBox.Show("New Debitor Hasn't Been Created", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

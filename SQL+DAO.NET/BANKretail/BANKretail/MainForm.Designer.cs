@@ -269,8 +269,9 @@
             // addNewDebitorToolStripMenuItem
             // 
             this.addNewDebitorToolStripMenuItem.Name = "addNewDebitorToolStripMenuItem";
-            this.addNewDebitorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.addNewDebitorToolStripMenuItem.Text = "Add New Debitor";
+            this.addNewDebitorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.addNewDebitorToolStripMenuItem.Text = "Add New Debitor ...";
+            this.addNewDebitorToolStripMenuItem.Click += new System.EventHandler(this.addNewDebitorToolStripMenuItem_Click);
             // 
             // creditToolStripMenuItem
             // 
