@@ -62,5 +62,19 @@ namespace BANKretail
             string creditID = dgv_Credits.CurrentRow.Cells[0].Value.ToString();
             dgv_Payments.DataSource = dal.GetAllPaymentsForCredit(creditID);
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you really want exit?", "Bank Manager", MessageBoxButtons.OKCancel);
+            if (dr == DialogResult.OK)
+                e.Cancel = false;
+            else
+                e.Cancel = true;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
