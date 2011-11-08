@@ -54,6 +54,13 @@ namespace BANKretail
         private void MainForm_Load(object sender, EventArgs e)
         {
             dgv_Debitors.CellEnter +=new DataGridViewCellEventHandler(dgv_Debitors_CellEnter);
+            dgv_Credits.CellEnter += new DataGridViewCellEventHandler(dgv_Credits_CellEnter);
+        }
+
+        void dgv_Credits_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string creditID = dgv_Credits.CurrentRow.Cells[0].Value.ToString();
+            dgv_Payments.DataSource = dal.GetAllPaymentsForCredit(creditID);
         }
     }
 }
