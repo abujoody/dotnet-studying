@@ -132,7 +132,7 @@ namespace BANKretail
 
             string query = string.Format("INSERT INTO Debitors " +
                 "([ID], [Name], [PostNumber], [PhoneNumber]) " +
-                "VALUES ('{0}', '{1}', '{2}', '{3}'",
+                "VALUES ('{0}', '{1}', {2}, '{3}')",
                 ID, Name, PostNumber, (PhoneNumber != String.Empty) ? PhoneNumber : null);
 
             using (SqlConnection con = new SqlConnection(connectionString))
