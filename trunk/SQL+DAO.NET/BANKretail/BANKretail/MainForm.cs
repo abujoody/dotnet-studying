@@ -44,11 +44,16 @@ namespace BANKretail
             txbx_DebitorID.Text = dgv_Debitors.Rows[e.RowIndex].Cells[0].Value.ToString();
             txbx_DebitorName.Text = dgv_Debitors.Rows[e.RowIndex].Cells[1].Value.ToString();
             txbx_DebitorPostNumber.Text = dgv_Debitors.Rows[e.RowIndex].Cells[2].Value.ToString();
-            
+
             string phone = dgv_Debitors.Rows[e.RowIndex].Cells[3].Value.ToString();
             txbx_DebitorPhoneNumber.Text = (phone == string.Empty) ? "No data" : phone;
 
             dgv_Credits.DataSource = dal.GetAllCreditsForDebitor(dgv_Debitors.CurrentRow.Cells["ID"].Value.ToString());
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            dgv_Debitors.CellEnter +=new DataGridViewCellEventHandler(dgv_Debitors_CellEnter);
         }
     }
 }

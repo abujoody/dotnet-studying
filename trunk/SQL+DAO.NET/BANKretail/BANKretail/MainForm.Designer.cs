@@ -84,7 +84,6 @@
             this.dgv_Debitors.Name = "dgv_Debitors";
             this.dgv_Debitors.Size = new System.Drawing.Size(345, 110);
             this.dgv_Debitors.TabIndex = 0;
-            this.dgv_Debitors.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Debitors_CellEnter);
             // 
             // grbx_DebitorDetails
             // 
@@ -139,11 +138,11 @@
             this.lbl_DebitorID.TabIndex = 4;
             this.lbl_DebitorID.Text = "Debitor ID";
             // 
-            // txbx_PhoneNumber
+            // txbx_DebitorPhoneNumber
             // 
             this.txbx_DebitorPhoneNumber.BackColor = System.Drawing.SystemColors.Info;
             this.txbx_DebitorPhoneNumber.Location = new System.Drawing.Point(127, 97);
-            this.txbx_DebitorPhoneNumber.Name = "txbx_PhoneNumber";
+            this.txbx_DebitorPhoneNumber.Name = "txbx_DebitorPhoneNumber";
             this.txbx_DebitorPhoneNumber.ReadOnly = true;
             this.txbx_DebitorPhoneNumber.Size = new System.Drawing.Size(222, 20);
             this.txbx_DebitorPhoneNumber.TabIndex = 3;
@@ -312,6 +311,7 @@
             this.MainMenuStrip = this.MainMenu;
             this.Name = "MainForm";
             this.Text = "Bank Manager";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.grbx_Debitors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Debitors)).EndInit();
             this.grbx_DebitorDetails.ResumeLayout(false);
