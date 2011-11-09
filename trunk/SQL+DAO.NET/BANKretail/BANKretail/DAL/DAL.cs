@@ -5,6 +5,7 @@ using System.Text;
 using System.Collections;
 using System.Data.SqlClient;
 using System.Data.Common;
+using System.Globalization;
 
 namespace BANKretail
 {
@@ -51,7 +52,7 @@ namespace BANKretail
             return allDebitors;
         }
 
-        public object GetAllCreditsForDebitor(string debitorID)
+        public ArrayList GetAllCreditsForDebitor(string debitorID)
         {
             ArrayList allCredits = new ArrayList();
 
@@ -182,6 +183,54 @@ namespace BANKretail
             }
 
             return flagResult;            
+        }
+
+        public bool SaveNewPayment(Guid ID, Guid creditID, decimal paymentAmount, DateTime dateTime)
+        {
+            bool flag = true;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                SqlCommand com = con.CreateCommand();
+                com.Transaction = transaction;
+
+                try
+                {
+                    string paymentAmountString = paymentAmount.ToString(CultureInfo.InvariantCulture.NumberFormat);
+                    string query = string.Format(
+                        "INSERT INTO Payments (ID, CreditID, Amount, PaymentDate) " +
+                        "VALUES ('{0}', '{1}', '{2}', '{3}')",
+                        ID, creditID, paymentAmountString, dateTime);
+
+                    com.CommandText = query;
+                    com.ExecuteNonQuery();
+
+                    query = string.Format("UPDATE Credits SET Balance = (Balance - {0}) WHERE ID = '{1}'",
+                        paymentAmountString, creditID);
+                    com.CommandText = query;
+                    com.ExecuteNonQuery();
+
+                    transaction.Commit();
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                    flag = false;
+                }
+                finally
+                {
+                    //for example
+                    if (con.State == System.Data.ConnectionState.Open)
+                    {
+                        con.Dispose();
+                    }
+                }
+            }
+
+            return flag;
         }
     }
 }
