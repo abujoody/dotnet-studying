@@ -18,7 +18,11 @@ namespace BANKretail
             InitializeComponent();
 
             txbx_DebitorID.Text = Guid.NewGuid().ToString();
+
+            btn_SaveNewDebitor.Enabled = false;
         }
+
+
 
         private void btn_SaveNewDebitor_Click(object sender, EventArgs e)
         {
@@ -35,6 +39,22 @@ namespace BANKretail
             {
                 this.DialogResult = DialogResult.Abort;
             }
+        }
+
+        private void txbx_DebitorName_TextChanged(object sender, EventArgs e)
+        {
+            checkForAbilityToSaveNewDebitor();
+        }
+
+        private void txbx_DebitorPostNumber_TextChanged(object sender, EventArgs e)
+        {
+            checkForAbilityToSaveNewDebitor();
+        }
+
+        private void checkForAbilityToSaveNewDebitor()
+        {
+            btn_SaveNewDebitor.Enabled = (txbx_DebitorName.Text != String.Empty) &&
+                                         (txbx_DebitorPostNumber.Text != String.Empty);
         }
     }
 }

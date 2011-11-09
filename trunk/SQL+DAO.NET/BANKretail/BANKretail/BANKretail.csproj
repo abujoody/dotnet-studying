@@ -53,6 +53,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewCreditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCreditForm.Designer.cs">
+      <DependentUpon>NewCreditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewDebitorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCreditForm.resx">
+      <DependentUpon>NewCreditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewDebitorForm.resx">
       <DependentUpon>NewDebitorForm.cs</DependentUpon>
