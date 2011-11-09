@@ -61,9 +61,9 @@
             // 
             // btn_SaveNewDebitor
             // 
-            this.btn_SaveNewDebitor.Location = new System.Drawing.Point(127, 123);
+            this.btn_SaveNewDebitor.Location = new System.Drawing.Point(9, 123);
             this.btn_SaveNewDebitor.Name = "btn_SaveNewDebitor";
-            this.btn_SaveNewDebitor.Size = new System.Drawing.Size(222, 23);
+            this.btn_SaveNewDebitor.Size = new System.Drawing.Size(340, 23);
             this.btn_SaveNewDebitor.TabIndex = 8;
             this.btn_SaveNewDebitor.Text = "Save New Debitor";
             this.btn_SaveNewDebitor.UseVisualStyleBackColor = true;
@@ -151,6 +151,7 @@
             this.MinimizeBox = false;
             this.Name = "NewDebitorForm";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Debitor";
             this.grbx_DebitorDetails.ResumeLayout(false);
             this.grbx_DebitorDetails.PerformLayout();

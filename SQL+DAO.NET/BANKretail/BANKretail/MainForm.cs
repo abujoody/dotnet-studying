@@ -108,5 +108,21 @@ namespace BANKretail
                 MessageBox.Show("New Credit Hasn't Been Opened", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void passNewPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewPaymentForm newPayment = new NewPaymentForm();
+
+            DialogResult dr = newPayment.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                dgv_Credits.DataSource = dal.GetAllCreditsForDebitor(dgv_Debitors.CurrentRow.Cells["ID"].Value.ToString());
+                MessageBox.Show("New Payment Has Been Passed Successfully", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else if (dr == DialogResult.Abort)
+            {
+                MessageBox.Show("New Payments Hasn't Been Passed", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

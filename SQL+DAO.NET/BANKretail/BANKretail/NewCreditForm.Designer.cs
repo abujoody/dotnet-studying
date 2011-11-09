@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grbx_CreditDetails = new System.Windows.Forms.GroupBox();
+            this.lbl_StatusLabel = new System.Windows.Forms.Label();
+            this.lbl_AmountStatus = new System.Windows.Forms.Label();
             this.lbl_OpenDate = new System.Windows.Forms.Label();
             this.dtp_CreditOpenDate = new System.Windows.Forms.DateTimePicker();
             this.lsbx_DebitorsName = new System.Windows.Forms.ListBox();
@@ -41,8 +43,6 @@
             this.txbx_CreditBalance = new System.Windows.Forms.TextBox();
             this.txbx_CreditAmount = new System.Windows.Forms.TextBox();
             this.txbx_CreditID = new System.Windows.Forms.TextBox();
-            this.lbl_AmountStatus = new System.Windows.Forms.Label();
-            this.lbl_StatusLabel = new System.Windows.Forms.Label();
             this.grbx_CreditDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,24 @@
             this.grbx_CreditDetails.TabIndex = 3;
             this.grbx_CreditDetails.TabStop = false;
             this.grbx_CreditDetails.Text = "Credit Details";
+            // 
+            // lbl_StatusLabel
+            // 
+            this.lbl_StatusLabel.AutoSize = true;
+            this.lbl_StatusLabel.Location = new System.Drawing.Point(298, 162);
+            this.lbl_StatusLabel.Name = "lbl_StatusLabel";
+            this.lbl_StatusLabel.Size = new System.Drawing.Size(40, 13);
+            this.lbl_StatusLabel.TabIndex = 16;
+            this.lbl_StatusLabel.Text = "Status:";
+            // 
+            // lbl_AmountStatus
+            // 
+            this.lbl_AmountStatus.AutoSize = true;
+            this.lbl_AmountStatus.Location = new System.Drawing.Point(335, 162);
+            this.lbl_AmountStatus.Name = "lbl_AmountStatus";
+            this.lbl_AmountStatus.Size = new System.Drawing.Size(100, 13);
+            this.lbl_AmountStatus.TabIndex = 15;
+            this.lbl_AmountStatus.Text = "Type Credit Amount";
             // 
             // lbl_OpenDate
             // 
@@ -181,24 +199,6 @@
             this.txbx_CreditID.Size = new System.Drawing.Size(438, 20);
             this.txbx_CreditID.TabIndex = 0;
             // 
-            // lbl_AmountStatus
-            // 
-            this.lbl_AmountStatus.AutoSize = true;
-            this.lbl_AmountStatus.Location = new System.Drawing.Point(335, 162);
-            this.lbl_AmountStatus.Name = "lbl_AmountStatus";
-            this.lbl_AmountStatus.Size = new System.Drawing.Size(100, 13);
-            this.lbl_AmountStatus.TabIndex = 15;
-            this.lbl_AmountStatus.Text = "Type Credit Amount";
-            // 
-            // lbl_StatusLabel
-            // 
-            this.lbl_StatusLabel.AutoSize = true;
-            this.lbl_StatusLabel.Location = new System.Drawing.Point(298, 162);
-            this.lbl_StatusLabel.Name = "lbl_StatusLabel";
-            this.lbl_StatusLabel.Size = new System.Drawing.Size(40, 13);
-            this.lbl_StatusLabel.TabIndex = 16;
-            this.lbl_StatusLabel.Text = "Status:";
-            // 
             // NewCreditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +209,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewCreditForm";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Credit";
             this.grbx_CreditDetails.ResumeLayout(false);
             this.grbx_CreditDetails.PerformLayout();

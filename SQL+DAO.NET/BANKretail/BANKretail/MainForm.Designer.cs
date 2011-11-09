@@ -254,7 +254,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -301,6 +301,7 @@
             this.passNewPaymentToolStripMenuItem.Name = "passNewPaymentToolStripMenuItem";
             this.passNewPaymentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.passNewPaymentToolStripMenuItem.Text = "Pass New Payment ...";
+            this.passNewPaymentToolStripMenuItem.Click += new System.EventHandler(this.passNewPaymentToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -317,6 +318,7 @@
             this.MainMenuStrip = this.MainMenu;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bank Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
