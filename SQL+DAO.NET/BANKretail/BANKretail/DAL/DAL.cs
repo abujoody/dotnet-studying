@@ -125,6 +125,7 @@ namespace BANKretail
             return allPayments;
         }
 
+        // all types are string (because implicit conversion will take place anyway)
         public bool SaveNewDebitor(string ID, string Name,
             string PostNumber, string PhoneNumber)
         {
@@ -152,6 +153,35 @@ namespace BANKretail
             }
 
             return flagResult;
+        }
+
+        //Right way: arguments are of types similar to types database works
+        public bool SaveNewCredit(Guid ID, Guid debitorID, int amount,
+            decimal balance, DateTime openDate)
+        {
+            string query = String.Format(
+                "INSERT INTO Credits " +
+                "(ID, DebitorID, Amount, Balance, OpenDate) " +
+                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
+                ID, debitorID, amount, balance, openDate);
+
+            bool flagResult = false;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand com = new SqlCommand(query, con);
+                try
+                {
+                    con.Open();
+                    if (com.ExecuteNonQuery() == 1)
+                        flagResult = true;
+                }
+                catch(Exception)
+                {
+
+                }
+            }
+
+            return flagResult;            
         }
     }
 }

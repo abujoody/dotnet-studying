@@ -120,6 +120,7 @@
             this.txbx_DebitorPostNumber.Name = "txbx_DebitorPostNumber";
             this.txbx_DebitorPostNumber.Size = new System.Drawing.Size(222, 20);
             this.txbx_DebitorPostNumber.TabIndex = 2;
+            this.txbx_DebitorPostNumber.TextChanged += new System.EventHandler(this.txbx_DebitorPostNumber_TextChanged);
             // 
             // txbx_DebitorName
             // 
@@ -128,6 +129,7 @@
             this.txbx_DebitorName.Name = "txbx_DebitorName";
             this.txbx_DebitorName.Size = new System.Drawing.Size(222, 20);
             this.txbx_DebitorName.TabIndex = 1;
+            this.txbx_DebitorName.TextChanged += new System.EventHandler(this.txbx_DebitorName_TextChanged);
             // 
             // txbx_DebitorID
             // 

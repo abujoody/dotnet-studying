@@ -248,8 +248,8 @@
             // saveDataToCSVToolStripMenuItem
             // 
             this.saveDataToCSVToolStripMenuItem.Name = "saveDataToCSVToolStripMenuItem";
-            this.saveDataToCSVToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.saveDataToCSVToolStripMenuItem.Text = "Save Data to CSV";
+            this.saveDataToCSVToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.saveDataToCSVToolStripMenuItem.Text = "Save Data to CSV ...";
             // 
             // exitToolStripMenuItem
             // 
@@ -284,8 +284,9 @@
             // openNewCredtToolStripMenuItem
             // 
             this.openNewCredtToolStripMenuItem.Name = "openNewCredtToolStripMenuItem";
-            this.openNewCredtToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.openNewCredtToolStripMenuItem.Text = "Open New Credit";
+            this.openNewCredtToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.openNewCredtToolStripMenuItem.Text = "Open New Credit ...";
+            this.openNewCredtToolStripMenuItem.Click += new System.EventHandler(this.openNewCredtToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem
             // 
@@ -298,8 +299,8 @@
             // passNewPaymentToolStripMenuItem
             // 
             this.passNewPaymentToolStripMenuItem.Name = "passNewPaymentToolStripMenuItem";
-            this.passNewPaymentToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.passNewPaymentToolStripMenuItem.Text = "Pass New Payment";
+            this.passNewPaymentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.passNewPaymentToolStripMenuItem.Text = "Pass New Payment ...";
             // 
             // MainForm
             // 
@@ -312,7 +313,9 @@
             this.Controls.Add(this.grbx_DebitorDetails);
             this.Controls.Add(this.grbx_Debitors);
             this.Controls.Add(this.MainMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.MainMenu;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Bank Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

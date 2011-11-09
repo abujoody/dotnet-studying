@@ -92,5 +92,21 @@ namespace BANKretail
                 MessageBox.Show("New Debitor Hasn't Been Created", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void openNewCredtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewCreditForm newCredit = new NewCreditForm();
+
+            DialogResult dr = newCredit.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                dgv_Credits.DataSource = dal.GetAllCreditsForDebitor(dgv_Debitors.CurrentRow.Cells["ID"].Value.ToString());
+                MessageBox.Show("New Credit Has Been Opened Successfully", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else if (dr == DialogResult.Abort)
+            {
+                MessageBox.Show("New Credit Hasn't Been Opened", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
