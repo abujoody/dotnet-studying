@@ -84,6 +84,7 @@
             this.dgv_Debitors.Name = "dgv_Debitors";
             this.dgv_Debitors.Size = new System.Drawing.Size(345, 110);
             this.dgv_Debitors.TabIndex = 0;
+            this.dgv_Debitors.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgv_RowPrePaint);
             // 
             // grbx_DebitorDetails
             // 
@@ -193,6 +194,7 @@
             this.dgv_Credits.Name = "dgv_Credits";
             this.dgv_Credits.Size = new System.Drawing.Size(710, 145);
             this.dgv_Credits.TabIndex = 0;
+            this.dgv_Credits.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgv_RowPrePaint);
             // 
             // grbx_Payments
             // 
@@ -213,6 +215,7 @@
             this.dgv_Payments.Name = "dgv_Payments";
             this.dgv_Payments.Size = new System.Drawing.Size(710, 145);
             this.dgv_Payments.TabIndex = 0;
+            this.dgv_Payments.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgv_RowPrePaint);
             // 
             // grbx_Search
             // 
