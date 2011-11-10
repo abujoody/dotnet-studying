@@ -44,6 +44,14 @@
             this.grbx_Payments = new System.Windows.Forms.GroupBox();
             this.dgv_Payments = new System.Windows.Forms.DataGridView();
             this.grbx_Search = new System.Windows.Forms.GroupBox();
+            this.btn_FindNext = new System.Windows.Forms.Button();
+            this.btn_Find = new System.Windows.Forms.Button();
+            this.lbl_SearchDebitorPhone = new System.Windows.Forms.Label();
+            this.lbl_SearchDebitorPostNumber = new System.Windows.Forms.Label();
+            this.txbx_SearchDebitorPhone = new System.Windows.Forms.TextBox();
+            this.txbx_SearchDebitorPostNumber = new System.Windows.Forms.TextBox();
+            this.txbx_SearchDebitorName = new System.Windows.Forms.TextBox();
+            this.lbl_SearchDebitorName = new System.Windows.Forms.Label();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveDataToCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,14 +62,7 @@
             this.openNewCredtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passNewPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_SearchDebitorName = new System.Windows.Forms.Label();
-            this.txbx_SearchDebitorName = new System.Windows.Forms.TextBox();
-            this.txbx_SearchDebitorPostNumber = new System.Windows.Forms.TextBox();
-            this.txbx_SearchDebitorPhone = new System.Windows.Forms.TextBox();
-            this.lbl_SearchDebitorPostNumber = new System.Windows.Forms.Label();
-            this.lbl_SearchDebitorPhone = new System.Windows.Forms.Label();
-            this.btn_Find = new System.Windows.Forms.Button();
-            this.btn_FindNext = new System.Windows.Forms.Button();
+            this.chbx_SearchInDB = new System.Windows.Forms.CheckBox();
             this.grbx_Debitors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Debitors)).BeginInit();
             this.grbx_DebitorDetails.SuspendLayout();
@@ -228,6 +229,7 @@
             // 
             // grbx_Search
             // 
+            this.grbx_Search.Controls.Add(this.chbx_SearchInDB);
             this.grbx_Search.Controls.Add(this.btn_FindNext);
             this.grbx_Search.Controls.Add(this.btn_Find);
             this.grbx_Search.Controls.Add(this.lbl_SearchDebitorPhone);
@@ -242,6 +244,74 @@
             this.grbx_Search.TabIndex = 3;
             this.grbx_Search.TabStop = false;
             this.grbx_Search.Text = "Search";
+            // 
+            // btn_FindNext
+            // 
+            this.btn_FindNext.Location = new System.Drawing.Point(181, 66);
+            this.btn_FindNext.Name = "btn_FindNext";
+            this.btn_FindNext.Size = new System.Drawing.Size(170, 25);
+            this.btn_FindNext.TabIndex = 7;
+            this.btn_FindNext.Text = "Find Next";
+            this.btn_FindNext.UseVisualStyleBackColor = true;
+            this.btn_FindNext.Click += new System.EventHandler(this.btn_FindNext_Click);
+            // 
+            // btn_Find
+            // 
+            this.btn_Find.Location = new System.Drawing.Point(9, 66);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(166, 25);
+            this.btn_Find.TabIndex = 6;
+            this.btn_Find.Text = "Find";
+            this.btn_Find.UseVisualStyleBackColor = true;
+            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
+            // 
+            // lbl_SearchDebitorPhone
+            // 
+            this.lbl_SearchDebitorPhone.AutoSize = true;
+            this.lbl_SearchDebitorPhone.Location = new System.Drawing.Point(527, 24);
+            this.lbl_SearchDebitorPhone.Name = "lbl_SearchDebitorPhone";
+            this.lbl_SearchDebitorPhone.Size = new System.Drawing.Size(75, 13);
+            this.lbl_SearchDebitorPhone.TabIndex = 5;
+            this.lbl_SearchDebitorPhone.Text = "Debitor Phone";
+            // 
+            // lbl_SearchDebitorPostNumber
+            // 
+            this.lbl_SearchDebitorPostNumber.AutoSize = true;
+            this.lbl_SearchDebitorPostNumber.Location = new System.Drawing.Point(354, 24);
+            this.lbl_SearchDebitorPostNumber.Name = "lbl_SearchDebitorPostNumber";
+            this.lbl_SearchDebitorPostNumber.Size = new System.Drawing.Size(105, 13);
+            this.lbl_SearchDebitorPostNumber.TabIndex = 4;
+            this.lbl_SearchDebitorPostNumber.Text = "Debitor Post Number";
+            // 
+            // txbx_SearchDebitorPhone
+            // 
+            this.txbx_SearchDebitorPhone.Location = new System.Drawing.Point(530, 40);
+            this.txbx_SearchDebitorPhone.Name = "txbx_SearchDebitorPhone";
+            this.txbx_SearchDebitorPhone.Size = new System.Drawing.Size(176, 20);
+            this.txbx_SearchDebitorPhone.TabIndex = 3;
+            // 
+            // txbx_SearchDebitorPostNumber
+            // 
+            this.txbx_SearchDebitorPostNumber.Location = new System.Drawing.Point(357, 40);
+            this.txbx_SearchDebitorPostNumber.Name = "txbx_SearchDebitorPostNumber";
+            this.txbx_SearchDebitorPostNumber.Size = new System.Drawing.Size(167, 20);
+            this.txbx_SearchDebitorPostNumber.TabIndex = 2;
+            // 
+            // txbx_SearchDebitorName
+            // 
+            this.txbx_SearchDebitorName.Location = new System.Drawing.Point(9, 40);
+            this.txbx_SearchDebitorName.Name = "txbx_SearchDebitorName";
+            this.txbx_SearchDebitorName.Size = new System.Drawing.Size(342, 20);
+            this.txbx_SearchDebitorName.TabIndex = 1;
+            // 
+            // lbl_SearchDebitorName
+            // 
+            this.lbl_SearchDebitorName.AutoSize = true;
+            this.lbl_SearchDebitorName.Location = new System.Drawing.Point(6, 24);
+            this.lbl_SearchDebitorName.Name = "lbl_SearchDebitorName";
+            this.lbl_SearchDebitorName.Size = new System.Drawing.Size(72, 13);
+            this.lbl_SearchDebitorName.TabIndex = 0;
+            this.lbl_SearchDebitorName.Text = "Debitor Name";
             // 
             // MainMenu
             // 
@@ -307,7 +377,7 @@
             this.openNewCredtToolStripMenuItem.Name = "openNewCredtToolStripMenuItem";
             this.openNewCredtToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.openNewCredtToolStripMenuItem.Text = "Open New Credit ...";
-            this.openNewCredtToolStripMenuItem.Click += new System.EventHandler(this.openNewCredtToolStripMenuItem_Click);
+            this.openNewCredtToolStripMenuItem.Click += new System.EventHandler(this.openNewCreditToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem
             // 
@@ -324,73 +394,15 @@
             this.passNewPaymentToolStripMenuItem.Text = "Pass New Payment ...";
             this.passNewPaymentToolStripMenuItem.Click += new System.EventHandler(this.passNewPaymentToolStripMenuItem_Click);
             // 
-            // lbl_SearchDebitorName
+            // chbx_SearchInDB
             // 
-            this.lbl_SearchDebitorName.AutoSize = true;
-            this.lbl_SearchDebitorName.Location = new System.Drawing.Point(6, 24);
-            this.lbl_SearchDebitorName.Name = "lbl_SearchDebitorName";
-            this.lbl_SearchDebitorName.Size = new System.Drawing.Size(72, 13);
-            this.lbl_SearchDebitorName.TabIndex = 0;
-            this.lbl_SearchDebitorName.Text = "Debitor Name";
-            // 
-            // txbx_SearchDebitorName
-            // 
-            this.txbx_SearchDebitorName.Location = new System.Drawing.Point(9, 40);
-            this.txbx_SearchDebitorName.Name = "txbx_SearchDebitorName";
-            this.txbx_SearchDebitorName.Size = new System.Drawing.Size(342, 20);
-            this.txbx_SearchDebitorName.TabIndex = 1;
-            // 
-            // txbx_SearchDebitorPostNumber
-            // 
-            this.txbx_SearchDebitorPostNumber.Location = new System.Drawing.Point(357, 40);
-            this.txbx_SearchDebitorPostNumber.Name = "txbx_SearchDebitorPostNumber";
-            this.txbx_SearchDebitorPostNumber.Size = new System.Drawing.Size(167, 20);
-            this.txbx_SearchDebitorPostNumber.TabIndex = 2;
-            // 
-            // txbx_SearchDebitorPhone
-            // 
-            this.txbx_SearchDebitorPhone.Location = new System.Drawing.Point(530, 40);
-            this.txbx_SearchDebitorPhone.Name = "txbx_SearchDebitorPhone";
-            this.txbx_SearchDebitorPhone.Size = new System.Drawing.Size(176, 20);
-            this.txbx_SearchDebitorPhone.TabIndex = 3;
-            // 
-            // lbl_SearchDebitorPostNumber
-            // 
-            this.lbl_SearchDebitorPostNumber.AutoSize = true;
-            this.lbl_SearchDebitorPostNumber.Location = new System.Drawing.Point(354, 24);
-            this.lbl_SearchDebitorPostNumber.Name = "lbl_SearchDebitorPostNumber";
-            this.lbl_SearchDebitorPostNumber.Size = new System.Drawing.Size(105, 13);
-            this.lbl_SearchDebitorPostNumber.TabIndex = 4;
-            this.lbl_SearchDebitorPostNumber.Text = "Debitor Post Number";
-            // 
-            // lbl_SearchDebitorPhone
-            // 
-            this.lbl_SearchDebitorPhone.AutoSize = true;
-            this.lbl_SearchDebitorPhone.Location = new System.Drawing.Point(527, 24);
-            this.lbl_SearchDebitorPhone.Name = "lbl_SearchDebitorPhone";
-            this.lbl_SearchDebitorPhone.Size = new System.Drawing.Size(75, 13);
-            this.lbl_SearchDebitorPhone.TabIndex = 5;
-            this.lbl_SearchDebitorPhone.Text = "Debitor Phone";
-            // 
-            // btn_Find
-            // 
-            this.btn_Find.Location = new System.Drawing.Point(9, 66);
-            this.btn_Find.Name = "btn_Find";
-            this.btn_Find.Size = new System.Drawing.Size(111, 25);
-            this.btn_Find.TabIndex = 6;
-            this.btn_Find.Text = "Find";
-            this.btn_Find.UseVisualStyleBackColor = true;
-            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
-            // 
-            // btn_FindNext
-            // 
-            this.btn_FindNext.Location = new System.Drawing.Point(126, 66);
-            this.btn_FindNext.Name = "btn_FindNext";
-            this.btn_FindNext.Size = new System.Drawing.Size(111, 25);
-            this.btn_FindNext.TabIndex = 7;
-            this.btn_FindNext.Text = "Find Next";
-            this.btn_FindNext.UseVisualStyleBackColor = true;
-            this.btn_FindNext.Click += new System.EventHandler(this.btn_FindNext_Click);
+            this.chbx_SearchInDB.AutoSize = true;
+            this.chbx_SearchInDB.Location = new System.Drawing.Point(357, 71);
+            this.chbx_SearchInDB.Name = "chbx_SearchInDB";
+            this.chbx_SearchInDB.Size = new System.Drawing.Size(90, 17);
+            this.chbx_SearchInDB.TabIndex = 8;
+            this.chbx_SearchInDB.Text = "Search In DB";
+            this.chbx_SearchInDB.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -464,6 +476,7 @@
         private System.Windows.Forms.TextBox txbx_SearchDebitorPostNumber;
         private System.Windows.Forms.TextBox txbx_SearchDebitorName;
         private System.Windows.Forms.Label lbl_SearchDebitorName;
+        private System.Windows.Forms.CheckBox chbx_SearchInDB;
     }
 }
 

@@ -401,5 +401,54 @@ namespace BANKretail
 
             return result;
         }
+
+        public ArrayList searchByDebitor(string debName, string debPostNum, string debPhoneNum)
+        {
+            ArrayList searchedDebitors = new ArrayList();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand com = new SqlCommand("SearchByDebitor", con);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@debitorName";
+                param.Value = debName;
+                param.SqlDbType = System.Data.SqlDbType.NVarChar;
+                param.Direction = System.Data.ParameterDirection.Input;
+                com.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@debitorPostNumber";
+                param.Value = debPostNum;
+                param.SqlDbType = System.Data.SqlDbType.NVarChar;
+                param.Direction = System.Data.ParameterDirection.Input;
+                com.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@debitorPhoneNumber";
+                param.Value = debPhoneNum;
+                param.SqlDbType = System.Data.SqlDbType.NVarChar;
+                param.Direction = System.Data.ParameterDirection.Input;
+                com.Parameters.Add(param);
+
+                try
+                {
+                    con.Open();
+                    SqlDataReader dr = com.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        foreach (DbDataRecord result in dr)
+                            searchedDebitors.Add(result);
+                    }
+                }
+                catch(Exception)
+                {
+
+                }
+            }
+
+            return searchedDebitors;            
+        }
     }
 }
