@@ -61,8 +61,16 @@ namespace BANKretail
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //Step 2: create encapsulated sql request
-                string query = String.Format("SELECT * FROM Credits WHERE DebitorID='{0}' ORDER BY OpenDate", debitorID);
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand("GetAllCreditsForDebitor", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@debitorID";
+                param.SqlDbType = System.Data.SqlDbType.UniqueIdentifier;
+                param.Direction = System.Data.ParameterDirection.Input;
+                param.Value = new Guid(debitorID);
+
+                command.Parameters.Add(param);
 
                 try
                 {
