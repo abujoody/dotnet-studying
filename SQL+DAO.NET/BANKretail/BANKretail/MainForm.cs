@@ -139,5 +139,12 @@ namespace BANKretail
                 MessageBox.Show("DataBase Hasn't Been Saved", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void dgv_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            object headerValue = ((DataGridView)sender).Rows[e.RowIndex].HeaderCell.Value;
+            if (headerValue == null)
+                ((DataGridView)sender).Rows[e.RowIndex].HeaderCell.Value = (e.RowIndex + 1).ToString();
+        }
     }
 }
