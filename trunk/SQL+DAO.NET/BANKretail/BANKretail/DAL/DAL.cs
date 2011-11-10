@@ -6,6 +6,7 @@ using System.Collections;
 using System.Data.SqlClient;
 using System.Data.Common;
 using System.Globalization;
+using System.IO;
 
 namespace BANKretail
 {
@@ -231,6 +232,135 @@ namespace BANKretail
             }
 
             return flag;
+        }
+
+        public bool SaveDBToLocalFile()
+        {
+            bool result = true;
+
+            string query;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    StreamWriter file = new StreamWriter(new FileStream("Debitors.csv", FileMode.Create), Encoding.GetEncoding(1251));
+
+                    query = "SELECT * FROM Debitors";
+                    SqlCommand com = new SqlCommand(query, con);
+                    con.Open();
+                    SqlDataReader reader = com.ExecuteReader();
+
+                    //CSV Format
+                    file.WriteLine(@"""ID"";""Name"";""PostNumber"";""PhoneNumber""");
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            file.WriteLine(@"""" + reader.GetValue(0).ToString() + @""";""" +
+                            reader.GetString(1) + @""";""" +
+                            reader[2].ToString() + @""";""" +
+                            reader[3].ToString() + @"""", Encoding.ASCII);
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("No one row to save");
+                    }
+
+                    file.WriteLine("End of of file");
+
+                    file.Close();
+                }
+                catch
+                {
+                    result = false;
+                }
+            }
+
+            if (result)
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        StreamWriter file = new StreamWriter(new FileStream("Credits.csv", FileMode.Create), Encoding.GetEncoding(1251));
+
+                        query = "SELECT * FROM Credits";
+                        SqlCommand com = new SqlCommand(query, con);
+                        con.Open();
+                        SqlDataReader reader = com.ExecuteReader();
+
+                        //CSV Format
+                        file.WriteLine(@"""ID"";""DebitorID"";""Amount"";""Balance"";""OpenDate""");
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                file.WriteLine(@"""" + reader[0].ToString() + @""";""" +
+                                reader[1].ToString() + @""";""" +
+                                reader[2].ToString() + @""";""" +
+                                reader[3].ToString() + @""";""" +
+                                reader[4].ToString() + @"""", Encoding.ASCII);
+                            }
+                        }
+                        else
+                        {
+                            file.WriteLine("No one row to save");
+                        }
+
+                        file.WriteLine("End of of file");
+
+                        file.Close();
+                    }
+                    catch
+                    {
+                        result = false;
+                    }
+                }
+            }
+
+            if (result)
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        StreamWriter file = new StreamWriter(new FileStream("Payments.csv", FileMode.Create), Encoding.GetEncoding(1251));
+
+                        query = "SELECT * FROM Payments";
+                        SqlCommand com = new SqlCommand(query, con);
+                        con.Open();
+                        SqlDataReader reader = com.ExecuteReader();
+
+                        //CSV Format
+                        file.WriteLine(@"""ID"";""CreditID"";""Amount"";""OpenDate""");
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                file.WriteLine(@"""" + reader[0].ToString() + @""";""" +
+                                reader[1].ToString() + @""";""" +
+                                reader[2].ToString() + @""";""" +
+                                reader[3].ToString() + @"""", Encoding.ASCII);
+                            }
+                        }
+                        else
+                        {
+                            file.WriteLine("No one row to save");
+                        }
+
+                        file.WriteLine("End of of file");
+
+                        file.Close();
+                    }
+                    catch
+                    {
+                        result = false;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }
