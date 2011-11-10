@@ -13,12 +13,13 @@ namespace BANKretail
     public partial class MainForm : Form
     {
         DAL dal = new DAL();
+        ArrayList allDebitors;
 
         public MainForm()
         {
             InitializeComponent();
 
-            ArrayList allDebitors = dal.GetAllDebitors();
+            allDebitors = dal.GetAllDebitors();
             dgv_Debitors.DataSource = allDebitors;
             SettingsDGV_Debitors();
         }
@@ -86,8 +87,10 @@ namespace BANKretail
 
             DialogResult dr = newDebitor.ShowDialog();
             if (dr == DialogResult.OK)
-            {                
-                dgv_Debitors.DataSource = dal.GetAllDebitors();
+            {
+                allDebitors.Clear();
+                allDebitors = dal.GetAllDebitors();
+                dgv_Debitors.DataSource = allDebitors;
                 MessageBox.Show("New Debitor Has Been Created Successfully", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else if (dr == DialogResult.Abort)
@@ -96,7 +99,7 @@ namespace BANKretail
             }
         }
 
-        private void openNewCredtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openNewCreditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewCreditForm newCredit = new NewCreditForm();
 
@@ -124,7 +127,7 @@ namespace BANKretail
             }
             else if (dr == DialogResult.Abort)
             {
-                MessageBox.Show("New Payments Hasn't Been Passed", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("New Payment Hasn't Been Passed", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -156,29 +159,47 @@ namespace BANKretail
             string debPostNumber = txbx_SearchDebitorPostNumber.Text.Trim();
             string debPhoneNumber = txbx_SearchDebitorPhone.Text.Trim();
 
-            foreach (DataGridViewRow row in dgv_Debitors.Rows)
+            if (!chbx_SearchInDB.Checked)
             {
-                if (
-                    row.Cells["Name"].FormattedValue.ToString().Contains(debName) &&
-                    row.Cells["PostNumber"].FormattedValue.ToString().Contains(debPostNumber) &&
-                    row.Cells["PhoneNumber"].FormattedValue.ToString().Contains(debPhoneNumber)
-                   )
+                dgv_Debitors.DataSource = allDebitors;
+                foreach (DataGridViewRow row in dgv_Debitors.Rows)
                 {
-                    searchedRows.Add(row);
+                    if (
+                        row.Cells["Name"].FormattedValue.ToString().Contains(debName) &&
+                        row.Cells["PostNumber"].FormattedValue.ToString().Contains(debPostNumber) &&
+                        row.Cells["PhoneNumber"].FormattedValue.ToString().Contains(debPhoneNumber)
+                       )
+                    {
+                        searchedRows.Add(row);
+                    }
                 }
-            }
 
-            if (searchedRows.Count == 0)
+                if (searchedRows.Count == 0)
+                {
+                    MessageBox.Show("No Records Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    btn_FindNext.Enabled = false;
+                    return;
+                }
+
+                MessageBox.Show(searchedRows.Count + " Record(s) Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                btn_FindNext.Enabled = true;
+                currentRow = 0;
+                dgv_Debitors.CurrentCell = searchedRows[currentRow].Cells[1];
+            }
+            else
             {
-                MessageBox.Show("No Records Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                btn_FindNext.Enabled = false;
-                return;
-            }
+                ArrayList searchedDebitors = dal.searchByDebitor(debName, debPostNumber, debPhoneNumber);
+                if (searchedDebitors == null || searchedDebitors.Count == 0)
+                {
+                    MessageBox.Show("No Records Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            MessageBox.Show(searchedRows.Count + " Record(s) Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            btn_FindNext.Enabled = true;
-            currentRow = 0;
-            dgv_Debitors.CurrentCell = searchedRows[currentRow].Cells[1];
+                btn_FindNext.Enabled = false;
+
+                MessageBox.Show(searchedDebitors.Count + " Record(s) Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                dgv_Debitors.DataSource = searchedDebitors;
+            }
         }
 
         private void btn_FindNext_Click(object sender, EventArgs e)
