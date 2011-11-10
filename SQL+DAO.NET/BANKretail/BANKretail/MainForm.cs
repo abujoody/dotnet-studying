@@ -146,5 +146,49 @@ namespace BANKretail
             if (headerValue == null)
                 ((DataGridView)sender).Rows[e.RowIndex].HeaderCell.Value = (e.RowIndex + 1).ToString();
         }
+
+        List<DataGridViewRow> searchedRows;
+        int currentRow;
+        private void btn_Find_Click(object sender, EventArgs e)
+        {
+            searchedRows = new List<DataGridViewRow>();
+            string debName = txbx_SearchDebitorName.Text.Trim();
+            string debPostNumber = txbx_SearchDebitorPostNumber.Text.Trim();
+            string debPhoneNumber = txbx_SearchDebitorPhone.Text.Trim();
+
+            foreach (DataGridViewRow row in dgv_Debitors.Rows)
+            {
+                if (
+                    row.Cells["Name"].FormattedValue.ToString().Contains(debName) &&
+                    row.Cells["PostNumber"].FormattedValue.ToString().Contains(debPostNumber) &&
+                    row.Cells["PhoneNumber"].FormattedValue.ToString().Contains(debPhoneNumber)
+                   )
+                {
+                    searchedRows.Add(row);
+                }
+            }
+
+            if (searchedRows.Count == 0)
+            {
+                MessageBox.Show("No Records Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btn_FindNext.Enabled = false;
+                return;
+            }
+
+            MessageBox.Show(searchedRows.Count + " Record(s) Found", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            btn_FindNext.Enabled = true;
+            currentRow = 0;
+            dgv_Debitors.CurrentCell = searchedRows[currentRow].Cells[1];
+        }
+
+        private void btn_FindNext_Click(object sender, EventArgs e)
+        {
+            if (currentRow == searchedRows.Count - 1)
+                currentRow = 0;
+            else
+                currentRow++;
+
+            dgv_Debitors.CurrentCell = searchedRows[currentRow].Cells[1];
+        }
     }
 }
