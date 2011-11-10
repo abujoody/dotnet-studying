@@ -48,7 +48,10 @@ namespace BANKretail
             string phone = dgv_Debitors.Rows[e.RowIndex].Cells[3].Value.ToString();
             txbx_DebitorPhoneNumber.Text = (phone == string.Empty) ? "No data" : phone;
 
-            dgv_Credits.DataSource = dal.GetAllCreditsForDebitor(dgv_Debitors.CurrentRow.Cells["ID"].Value.ToString());
+            ArrayList allCredits = dal.GetAllCreditsForDebitor(dgv_Debitors.CurrentRow.Cells["ID"].Value.ToString());
+            dgv_Credits.DataSource = allCredits;
+            if (allCredits == null || allCredits.Count == 0)
+                dgv_Payments.DataSource = null;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -122,6 +125,18 @@ namespace BANKretail
             else if (dr == DialogResult.Abort)
             {
                 MessageBox.Show("New Payments Hasn't Been Passed", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void saveDataToCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dal.SaveDBToLocalFile())
+            {
+                MessageBox.Show("DataBase Has Been Saved Succesfully", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                MessageBox.Show("DataBase Hasn't Been Saved", "Bank Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

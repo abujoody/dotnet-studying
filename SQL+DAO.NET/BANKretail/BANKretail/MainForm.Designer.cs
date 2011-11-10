@@ -250,6 +250,7 @@
             this.saveDataToCSVToolStripMenuItem.Name = "saveDataToCSVToolStripMenuItem";
             this.saveDataToCSVToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.saveDataToCSVToolStripMenuItem.Text = "Save Data to CSV ...";
+            this.saveDataToCSVToolStripMenuItem.Click += new System.EventHandler(this.saveDataToCSVToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
