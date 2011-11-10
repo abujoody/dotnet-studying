@@ -160,17 +160,48 @@ namespace BANKretail
         //Right way: arguments are of types similar to types database works
         public bool SaveNewCredit(Guid ID, Guid debitorID, int amount,
             decimal balance, DateTime openDate)
-        {
+        { 
             string query = String.Format(
                 "INSERT INTO Credits " +
                 "(ID, DebitorID, Amount, Balance, OpenDate) " +
-                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
-                ID, debitorID, amount, balance, openDate);
+                "VALUES (@ID, @DebitorID, @Amount, @Balance, @OpenDate)");
 
             bool flagResult = false;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand com = new SqlCommand(query, con);
+
+                //query changed to parametrized for security reason
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@ID";
+                param.Value = ID;
+                param.SqlDbType = System.Data.SqlDbType.UniqueIdentifier;
+                com.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@DebitorID";
+                param.Value = debitorID;
+                param.SqlDbType = System.Data.SqlDbType.UniqueIdentifier;
+                com.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@Amount";
+                param.Value = amount;
+                param.SqlDbType = System.Data.SqlDbType.Money;
+                com.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@Balance";
+                param.Value = balance;
+                param.SqlDbType = System.Data.SqlDbType.Money;
+                com.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@OpenDate";
+                param.Value = openDate;
+                param.SqlDbType = System.Data.SqlDbType.DateTime;
+                com.Parameters.Add(param);
+
                 try
                 {
                     con.Open();
