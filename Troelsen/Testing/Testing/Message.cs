@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Windows.Forms;
+
 namespace Testing
 {
-    class Program
+    class Message
     {
-        static void Main(string[] args)
+        public void speak()
         {
-            Console.WriteLine("Testing! 1, 2, 3");
-
-            Message msg = new Message();
-            msg.speak();
+            MessageBox.Show("I can speak");
         }
     }
 }
