@@ -27,7 +27,25 @@ namespace ConsoleTest
 
             //ObjectTest();
 
-            DataTypeFunctionality();
+            //DataTypeFunctionality();
+
+            ParseFromString();
+        }
+
+        static void ParseFromString()
+        {
+            Console.WriteLine("=> Data type parsing:");
+
+            bool b = bool.Parse("true");
+            b = bool.Parse("tRue");
+            b = bool.Parse("false");
+            b = bool.Parse("faLse");
+
+            int i = int.Parse("777");
+            Console.WriteLine("Int from 777: {0}", i);
+
+            if (int.TryParse("aaa", out i) == true)
+                Console.WriteLine("Int from aaa: {0}", i);
         }
 
         static void DataTypeFunctionality()
