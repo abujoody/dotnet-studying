@@ -17,7 +17,33 @@ namespace ConsoleTest
 
             //Test2();
 
-            Test3();
+            //Test3();
+
+            //Test4();
+
+            LocalVarDeclarations();
+        }
+
+        private static void LocalVarDeclarations()
+        {
+            Console.WriteLine("=> Data Declarations:");
+            
+            int myInt = 0;
+            string myString;
+            myString = "This is my character data";
+            
+            bool bl = true, b2 = false, b3 = bl;
+            
+            System.Boolean b4 = false;
+            Console.WriteLine("Yourdata: {0}, {1}, {2}, {3}, {4}, {5}",
+            myInt, myString, bl, b2, b3, b4);
+            Console.WriteLine ();
+        }
+
+        private static void Test4()
+        {
+            System.Decimal dc = 301.5M;
+            Console.WriteLine("Decimal:{0}", dc);
         }
 
         private static void Test3()
