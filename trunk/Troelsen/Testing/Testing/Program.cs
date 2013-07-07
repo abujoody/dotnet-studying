@@ -16,9 +16,16 @@ namespace Testing
             ConfigureCUI();
 
             // V3
-            for (int i = 0; i < args.Length; i++)
+            /*for (int i = 0; i < args.Length; i++)
             {
                 Console.WriteLine("Arg[{0}]: {1}", i, args[i]); 
+            }*/
+
+            string[] cmdArgs = Environment.GetCommandLineArgs();
+            int i = 0;
+            foreach (string arg in cmdArgs)
+            {
+                Console.WriteLine("Arg[i++]: {1}", i, arg);
             }
 
             Console.ReadLine();
