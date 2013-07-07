@@ -29,7 +29,21 @@ namespace ConsoleTest
 
             //DataTypeFunctionality();
 
-            ParseFromString();
+            //ParseFromString();
+
+            DateAndTime();
+        }
+
+        static void DateAndTime()
+        {
+            DateTime dt = new DateTime(2013, 10, 11, 17, 15, 58);
+            dt = dt.AddDays(2);
+            Console.WriteLine("DateTime: {0}", dt);
+
+            TimeSpan ts = new TimeSpan(5, 4, 3);
+            ts = ts.Subtract(new TimeSpan(1, 5, 4));
+
+            Console.WriteLine("TimeSpan: {0}", ts);
         }
 
         static void ParseFromString()
