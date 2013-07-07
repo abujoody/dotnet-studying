@@ -4,7 +4,7 @@ namespace Testing
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             // V1
             /*Console.WriteLine("Testing! 1, 2, 3");
@@ -16,6 +16,8 @@ namespace Testing
             ConfigureCUI();
 
             Console.ReadLine();
+
+            return 0;
         }
 
         private static void ConfigureCUI()
