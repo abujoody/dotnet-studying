@@ -21,7 +21,25 @@ namespace ConsoleTest
 
             //Test4();
 
-            LocalVarDeclarations();
+            //LocalVarDeclarations();
+
+            Test6();
+        }
+
+        private static void Test6()
+        {
+            //bool bad; bool tmp = bad;
+            //- compilation error
+            //"Use of unassigned local variable 'bad'"
+
+            bool b = new bool();
+            int i = new int();
+            char c = new char(); // - space or '\0' ???
+            double d = new double();
+            DateTime dt = new DateTime();
+
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", b, i, c, d, dt);
+            Console.WriteLine(); 
         }
 
         private static void LocalVarDeclarations()
