@@ -39,8 +39,33 @@ namespace ConsoleTest
 
             //Strings();
 
-            StringBuilderTest();
+            //StringBuilderTest();
+
+            Conversion();
         }
+
+        static void Conversion()
+        {
+            short numbl = 30000, numb2 = 30000;
+            //short answer = Add(numbl, numb2); - compile error
+
+            try 
+	        {	        
+		        //short answer = checked((short)Add(numbl, numb2));
+                short answer = (short)Add(numbl, numb2);
+                Console.WriteLine(answer);
+	        }
+	        catch (OverflowException e)
+	        {
+                Console.WriteLine(e.Message);
+	        }
+        }
+
+        static int Add(int a, int b)
+        {
+            return a + b;
+        }
+        
 
         static void StringBuilderTest()
         {
