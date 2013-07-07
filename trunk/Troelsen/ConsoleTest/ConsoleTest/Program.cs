@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConsoleTest
 {
@@ -14,7 +15,15 @@ namespace ConsoleTest
 
             //GetUserData();
 
-            Test2();
+            //Test2();
+
+            Test3();
+        }
+
+        private static void Test3()
+        {
+            string userMsg = string.Format("65535 as Hex = {0:X}", 65535);
+            MessageBox.Show(userMsg);
         }
 
         private static void Test1()
