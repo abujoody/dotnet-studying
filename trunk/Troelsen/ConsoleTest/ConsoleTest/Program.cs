@@ -37,7 +37,17 @@ namespace ConsoleTest
 
             //BigIntegers();
 
-            Strings();
+            //Strings();
+
+            StringBuilderTest();
+        }
+
+        static void StringBuilderTest()
+        {
+            StringBuilder sb = new StringBuilder("test");
+            sb.Append("5555555588888888");
+            sb.Append(false);
+            Console.WriteLine(sb);
         }
 
         static void Strings()
