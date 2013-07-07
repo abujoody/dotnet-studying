@@ -12,7 +12,9 @@ namespace ConsoleTest
         {
             //Test1();
 
-            GetUserData();
+            //GetUserData();
+
+            Test2();
         }
 
         private static void Test1()
@@ -39,6 +41,20 @@ namespace ConsoleTest
             Console.WindowLeft = 25;
 
             Console.ReadLine();
+        }
+
+        private static void Test2()
+        {
+            Console.WriteLine("99999:");
+            Console.WriteLine("c format: {0:c}", 99999);
+            Console.WriteLine("d9 format: {0:d9}", 99999);
+            Console.WriteLine("f3 format: {0:f3}", 99999);
+            Console.WriteLine("n format: {0:n}", 99999);
+
+            Console.WriteLine("E format: {0:E}", 99999);
+            Console.WriteLine("e format: {0:e}", 99999);
+            Console.WriteLine("X format: {0:X}", 99999);
+            Console.WriteLine("x format: {0:x}", 99999);
         }
 
         private static void GetUserData()
