@@ -15,6 +15,12 @@ namespace Testing
             // V2
             ConfigureCUI();
 
+            // V3
+            for (int i = 0; i < args.Length; i++)
+            {
+                Console.WriteLine("Arg[{0}]: {1}", i, args[i]); 
+            }
+
             Console.ReadLine();
 
             return 0;
