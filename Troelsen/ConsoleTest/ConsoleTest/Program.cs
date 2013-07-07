@@ -35,7 +35,36 @@ namespace ConsoleTest
 
             //DateAndTime();
 
-            BigIntegers();
+            //BigIntegers();
+
+            Strings();
+        }
+
+        static void Strings()
+        {
+            //Basic
+            string str = "Test string";
+            Console.WriteLine("Length: {0}", str.Length);
+            Console.WriteLine("To upper: {0}", str.ToUpper());
+            Console.WriteLine("Insert: {0}", str.Insert(1, "XXX"));
+            Console.WriteLine("Contains X: {0}", str.Contains("X"));
+            Console.WriteLine("s -> |: {0}", str.Replace('s', '|'));
+
+            Console.WriteLine("{0} {1}", "ttt" + "xxx", "yyy");
+            Console.WriteLine("{0} {1}", string.Concat("ttt", "xxx"), "yyy");
+
+            string str2 = @"D:\Temp\Test";
+            Console.WriteLine(str2);
+            string str3 = @"D:\Temp\    
+                    Test
+            555";
+            Console.WriteLine(str2);
+            Console.WriteLine(str3);
+
+            string s1 = "sss";
+            string s2 = "sss";
+
+            Console.WriteLine("s1 == s2? : {0}", s1 == s2);
         }
 
         static void BigIntegers()
