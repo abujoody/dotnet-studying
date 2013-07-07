@@ -23,7 +23,19 @@ namespace ConsoleTest
 
             //LocalVarDeclarations();
 
-            Test6();
+            //Test6();
+
+            ObjectTest();
+        }
+
+        private static void ObjectTest()
+        {
+            Console.WriteLine("12.GetHashCode() = {0}", 12.GetHashCode());
+            Console.WriteLine("12.Equals(23) = {0}", 12.Equals(23));
+            Console.WriteLine("12.Equals(12) = {0}", 12.Equals(12));
+            Console.WriteLine("12.ToString() = {0}", 12.ToString());
+            Console.WriteLine("12.GetType() = {0}", 12.GetType());
+            Console.WriteLine();
         }
 
         private static void Test6()
