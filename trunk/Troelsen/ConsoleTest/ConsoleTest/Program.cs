@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Numerics;
+
 namespace ConsoleTest
 {
     class Program
@@ -31,7 +33,26 @@ namespace ConsoleTest
 
             //ParseFromString();
 
-            DateAndTime();
+            //DateAndTime();
+
+            BigIntegers();
+        }
+
+        static void BigIntegers()
+        {
+            BigInteger bi = BigInteger.Parse(
+                "99999999999999999999999999999999999999999999999");
+            BigInteger bi2 = BigInteger.Parse(
+                "7777777777777777777777777777777777777777777777");
+
+            Console.WriteLine("Bi: {0}", bi);
+            Console.WriteLine("Bi2: {0}", bi2);
+            Console.WriteLine("Bi / Bi2 = {0}",
+                BigInteger.Divide(bi, bi2));
+            Console.WriteLine("Bi * Bi2 = {0}",
+                BigInteger.Multiply(bi, bi2));
+            Console.WriteLine("Bi + Bi2 = {0}",
+                bi + bi2);
         }
 
         static void DateAndTime()
