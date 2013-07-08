@@ -10,6 +10,15 @@ namespace Console2
     {
         static void Main(string[] args)
         {
+            VarTest();
+        }
+
+        private static void VarTest()
+        {
+            var testInt = 55;
+            testInt = 7;
+            Console.WriteLine(testInt);
+            Console.WriteLine(testInt.GetType());
         }
     }
 }
