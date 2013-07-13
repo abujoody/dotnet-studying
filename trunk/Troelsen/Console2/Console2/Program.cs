@@ -21,11 +21,42 @@ namespace Console2
 
             NamedArgs(b: 55, c: "str", a: 666);*/
 
+            //Arrays();
+
+            Nullobjs();
+        }
+
+        private static void Nullobjs()
+        {
+            Nullable<int> int1 = 5;
+            int? int2 = 6;
+            Nullable<int>[] int3 = new Nullable<int>[] { 1, 2, 3 };
+            int?[] int4 = new Nullable<int>[] { 1, 2, 3 };
+            Nullable<int>[] int5 = new int?[] { 1, 2, 3 };
+
+            Console.WriteLine(int1.GetType());
+            Console.WriteLine(int1.HasValue);
+            Console.WriteLine(int1.Value);
+
+            int tern = int2 == 6 ? -1 : 0;
+            Console.WriteLine(tern);
+
+            // ?? test
+            Nullable<int> intNull = null;
+            int test1 = intNull ?? 555;
+            Console.WriteLine(test1);
+            intNull = 777;
+            test1 = intNull ?? 555;
+            Console.WriteLine(test1);
+        }
+
+        private static void Arrays()
+        {
             Parent[] testArr = new Parent[] { new Parent(), new Child() };
 
-            int[,] x = new int [2, 2];
+            int[,] x = new int[2, 2];
             int[][][][] y = new int[2][][][];
-            int[,] myArray = new int[4,2] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
+            int[,] myArray = new int[4, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
 
             int[][] myJaggedArray = new int[3][] 
                         {
