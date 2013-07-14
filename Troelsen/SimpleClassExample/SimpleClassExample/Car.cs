@@ -20,5 +20,13 @@ namespace SimpleClassExample
         {
             currSpeed += delta;
         }
+
+        public string Pet
+        {
+            get { return petName; }
+            set { petName = value; }
+        }
+
+        public string Pet2 { get; set; }
     }
 }
